@@ -1,0 +1,169 @@
+a{
+    text-decoration: none;
+}
+.post-card{
+    border: 0.1px solid rgb(59, 59, 59);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 700px;
+    min-height:300px ;
+    margin-top: 50px;
+}
+.posts{
+    margin-top: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.post-img{
+    img{
+        width: 100%;
+        height: 400px;
+    }
+}
+.title-icons{
+    margin-top: 10px;
+    padding-left: 50px;
+     padding-right: 50px;
+     box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+.post-icons{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    p{
+        margin-top: 3px;
+    }
+     i{
+        margin-right: 30px;
+        font-size: 30px;
+        cursor: pointer;
+      
+    }
+}
+.post-card{
+    margin-top: 60px;
+}
+.box-sender{
+  
+    border: 2px solid $first-theme-color;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.post-sender{
+   position: absolute;
+   top: 5px;
+    cursor: pointer;
+}
+
+.fa-heart{
+    margin-left: 10px;
+    color:black;
+    &:hover{
+        color: #282929;
+    }
+}
+.fa-comment{
+    color: rgb(0, 0, 0);
+    &:hover
+    {
+       color: rgb(48, 48, 48); 
+    }
+}
+.fa-flag{
+   color: rgb(209, 66, 66);
+    &:hover{
+           color: rgb(201, 34, 34);
+    }
+}
+.post-description{
+    padding: 10px 50px;
+    
+    box-sizing: border-box;
+}
+.post-title{
+    font-weight: 700;
+    text-transform: capitalize;
+    font-size: 35px;
+    color: $first-theme-color;
+   
+}
+.box-sender{
+  display: flex;
+  justify-content: center;
+  a,p{
+      margin-top: 15px;
+      cursor: pointer;
+      color: $first-theme-color;
+      font-size: 20px;
+    
+      font-weight: 500;
+      transition: 1s;
+      &:hover{
+          color: black;
+      }
+  }
+}
+
+@media only screen and (min-width: 360px){
+    .post-card{
+   
+    width: 340px;
+    
+}
+.post-icons{
+    margin-left: 40px;
+   
+     i{
+        margin-right: 25px;
+       
+    }
+}
+}
+@media only screen and (min-width: 768px){
+    .post-card{
+   
+    width: 600px;
+    
+}
+.post-icons{
+    margin-left: 40px;
+   
+     i{
+        margin-right: 25px;
+       
+    }
+}
+}
+@media only screen and (min-width: 800px){
+    .post-card{
+   
+    width: 890px;
+    
+}
+.post-icons{
+    margin-left: 40px;
+   
+     i{
+        margin-right: 30px;
+       
+    }
+}
+}
+@media only screen and (width: 280px){
+    .post-card{
+   
+    width: 250px;
+    
+}
+.post-icons{
+    margin-left: 21px;
+   
+     i{ font-size: 18px;
+        margin-right: 20px;
+       
+    }
+}
+}

@@ -1,0 +1,44 @@
+.why-animals-inner{
+    margin-top: 30px;
+    padding: 5px;
+    box-sizing: border-box;
+    div{
+       
+        padding: 5px;
+        padding-left: 20px;
+        padding-right: 20px;
+        box-sizing: border-box;
+        min-height: 300px;
+      
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin-bottom: 20px;
+       .why-animals-inner-items{
+             width: 500px;
+        }
+    }
+}
+
+.why-animals{
+margin-top: 99px;
+    h1{ text-align: center;
+        font-size: 40px;
+        text-transform: uppercase;
+        color: $first-theme-color;
+        font-weight: 700;
+    }
+}
+
+.why-animals-inner-items{
+    cursor: pointer;
+    
+  display: inline-block;
+  overflow: hidden;
+}
+.why-animals-inner-items img {
+  transition: transform 0.5s linear;
+}
+.why-animals-inner-items:hover img {
+  transform: scale(1.1);
+}

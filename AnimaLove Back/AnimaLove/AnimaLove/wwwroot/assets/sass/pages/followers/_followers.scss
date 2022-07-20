@@ -1,0 +1,749 @@
+.followers-title{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $first-theme-color;
+    p{ 
+        text-transform: uppercase;
+        font-size: 35px;
+        font-weight: 700;
+
+    }
+}
+.followers-list{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.followers-list-inner{
+
+    width: 800px;
+    min-height: 250px;
+}
+.follower-single-item-main{
+    display: flex;
+    justify-content: space-between; 
+    padding: 10px 20px;
+    box-sizing: border-box;
+     position: relative;
+     border: 1px solid $first-theme-color;
+     margin-bottom: 15px;
+    
+}
+
+.follower-single-item{
+    
+    display: flex;
+    img{
+        border-radius: 50%;
+        width: 90px;
+        height: 90px;
+        border: 2px solid $first-theme-color;
+    }
+}
+.follower-username-box{
+     margin-left: 18px;
+      margin-top: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p{
+       font-size: 20px;
+        text-align: center;
+    }
+}
+.follow-button{
+    cursor: pointer;
+    transition: 1s;
+    margin-top: 10px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    width: 200px;
+    height: 50px;
+    background-color: $first-theme-color;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a{color: white;
+        font-size: 25px;
+        font-weight: 600;
+        text-align: center;
+    }
+    &:hover{
+        background-color: rgb(19, 122, 153);
+    }
+}
+@media only screen  and (width: 375px) {
+   .followers-list-inner{
+
+    width: 350px;
+    min-height: 250px;
+}
+.follower-single-item{
+    
+    display: flex;
+    img{
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        border: 2px solid $first-theme-color;
+    }
+}
+.follow-button{
+    margin-left: 15px;
+    cursor: pointer;
+    transition: 1s;
+    margin-top: 5px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    width: 100px;
+    height: 30px;
+    background-color: $first-theme-color;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a{color: white;
+        font-size: 14px;
+        font-weight: 600;
+        text-align: center;
+    }
+    &:hover{
+        background-color: rgb(19, 122, 153);
+    }
+}
+}
+
+@media only screen  and (width: 414px) {
+   .followers-list-inner{
+
+    width: 350px;
+    min-height: 250px;
+}
+.follower-single-item{
+    
+    display: flex;
+    img{
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        border: 2px solid $first-theme-color;
+    }
+}
+.follow-button{
+    margin-left: 15px;
+    cursor: pointer;
+    transition: 1s;
+    margin-top: 5px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    width: 100px;
+    height: 30px;
+    background-color: $first-theme-color;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a{color: white;
+        font-size: 14px;
+        font-weight: 600;
+        text-align: center;
+    }
+    &:hover{
+        background-color: rgb(19, 122, 153);
+    }
+}
+}
+
+
+@media only screen  and (width: 390px) {
+   .followers-list-inner{
+
+    width: 350px;
+    min-height: 250px;
+}
+.follower-single-item{
+    
+    display: flex;
+    img{
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        border: 2px solid $first-theme-color;
+    }
+}
+.follow-button{
+    margin-left: 15px;
+    cursor: pointer;
+    transition: 1s;
+    margin-top: 5px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    width: 100px;
+    height: 30px;
+    background-color: $first-theme-color;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a{color: white;
+        font-size: 14px;
+        font-weight: 600;
+        text-align: center;
+    }
+    &:hover{
+        background-color: rgb(19, 122, 153);
+    }
+}
+}
+
+
+@media only screen  and (width: 393px) {
+   .followers-list-inner{
+
+    width: 350px;
+    min-height: 250px;
+}
+.follower-single-item{
+    
+    display: flex;
+    img{
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        border: 2px solid $first-theme-color;
+    }
+}
+.follow-button{
+    margin-left: 15px;
+    cursor: pointer;
+    transition: 1s;
+    margin-top: 5px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    width: 100px;
+    height: 30px;
+    background-color: $first-theme-color;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a{color: white;
+        font-size: 14px;
+        font-weight: 600;
+        text-align: center;
+    }
+    &:hover{
+        background-color: rgb(19, 122, 153);
+    }
+}
+}
+
+@media only screen  and (width: 360px) {
+   .followers-list-inner{
+
+    width: 350px;
+    min-height: 250px;
+}
+.follower-single-item{
+    
+    display: flex;
+    img{
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        border: 2px solid $first-theme-color;
+    }
+}
+.follow-button{
+    margin-left: 15px;
+    cursor: pointer;
+    transition: 1s;
+    margin-top: 5px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    width: 100px;
+    height: 30px;
+    background-color: $first-theme-color;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a{color: white;
+        font-size: 14px;
+        font-weight: 600;
+        text-align: center;
+    }
+    &:hover{
+        background-color: rgb(19, 122, 153);
+    }
+}
+}
+
+@media only screen  and (width: 412px) {
+   .followers-list-inner{
+
+    width: 350px;
+    min-height: 250px;
+}
+.follower-single-item{
+    
+    display: flex;
+    img{
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        border: 2px solid $first-theme-color;
+    }
+}
+.follow-button{
+    margin-left: 15px;
+    cursor: pointer;
+    transition: 1s;
+    margin-top: 5px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    width: 100px;
+    height: 30px;
+    background-color: $first-theme-color;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a{color: white;
+        font-size: 14px;
+        font-weight: 600;
+        text-align: center;
+    }
+    &:hover{
+        background-color: rgb(19, 122, 153);
+    }
+}
+}
+@media only screen  and (width: 820px) {
+   .followers-list-inner{
+
+    width: 750px;
+    min-height: 250px;
+}
+.follower-single-item{
+    
+    display: flex;
+    img{
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        border: 2px solid $first-theme-color;
+    }
+}
+.follow-button{
+   
+    cursor: pointer;
+    transition: 1s;
+    margin-top: 15px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    width: 200px;
+    height: 50px;
+    background-color: $first-theme-color;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a{color: white;
+        font-size: 20px;
+        font-weight: 600;
+        text-align: center;
+    }
+    &:hover{
+        background-color: rgb(19, 122, 153);
+    }
+}
+}
+@media only screen  and (width: 768px) {
+   .followers-list-inner{
+
+    width: 750px;
+    min-height: 250px;
+}
+.follower-single-item{
+    
+    display: flex;
+    img{
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        border: 2px solid $first-theme-color;
+    }
+}
+.follow-button{
+   
+    cursor: pointer;
+    transition: 1s;
+    margin-top: 15px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    width: 200px;
+    height: 50px;
+    background-color: $first-theme-color;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a{color: white;
+        font-size: 20px;
+        font-weight: 600;
+        text-align: center;
+    }
+    &:hover{
+        background-color: rgb(19, 122, 153);
+    }
+}
+}
+
+@media only screen  and (width: 912px)  {
+   .followers-list-inner{
+
+    width: 750px;
+    min-height: 250px;
+}
+.follower-single-item{
+    
+    display: flex;
+    img{
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        border: 2px solid $first-theme-color;
+    }
+}
+.follow-button{
+   
+    cursor: pointer;
+    transition: 1s;
+    margin-top: 15px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    width: 200px;
+    height: 50px;
+    background-color: $first-theme-color;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a{color: white;
+        font-size: 20px;
+        font-weight: 600;
+        text-align: center;
+    }
+    &:hover{
+        background-color: rgb(19, 122, 153);
+    }
+}
+}
+
+@media only screen  and (width: 540px) {
+   .followers-list-inner{
+
+    width: 450px;
+    min-height: 250px;
+}
+.follower-single-item{
+    
+    display: flex;
+    img{
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        border: 2px solid $first-theme-color;
+    }
+}
+.follow-button{
+    margin-left: 15px;
+    cursor: pointer;
+    transition: 1s;
+    margin-top: 5px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    width: 100px;
+    height: 30px;
+    background-color: $first-theme-color;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a{color: white;
+        font-size: 14px;
+        font-weight: 600;
+        text-align: center;
+    }
+    &:hover{
+        background-color: rgb(19, 122, 153);
+    }
+}
+}
+
+@media only screen  and (width: 280px) {
+   .followers-list-inner{
+
+    width: 250px;
+    min-height: 250px;
+}
+.follower-single-item{
+    
+    display: flex;
+    img{
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        border: 2px solid $first-theme-color;
+    }
+    div{
+        p{
+            font-size: 10px;
+        }
+    }
+}
+.follow-button{
+    margin-left: 15px;
+    cursor: pointer;
+    transition: 1s;
+    margin-top: 0px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    width: 90px;
+    height: 30px;
+    background-color: $first-theme-color;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a{color: white;
+        font-size: 14px;
+        font-weight: 600;
+        text-align: center;
+    }
+    &:hover{
+        background-color: rgb(19, 122, 153);
+    }
+}
+}
+
+
+
+
+@media only screen  and (min-width: 750px) and (max-width: 850px)   {
+   .followers-list-inner{
+
+    width: 650px;
+    min-height: 250px;
+}
+.follower-single-item{
+    
+    display: flex;
+    img{
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        border: 2px solid $first-theme-color;
+    }
+}
+.follow-button{
+   
+    cursor: pointer;
+    transition: 1s;
+    margin-top: 15px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    width: 200px;
+    height: 50px;
+    background-color: $first-theme-color;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a{color: white;
+        font-size: 20px;
+        font-weight: 600;
+        text-align: center;
+    }
+    &:hover{
+        background-color: rgb(19, 122, 153);
+    }
+}
+}
+
+@media only screen  and (min-width: 650px) and (max-width: 750px)   {
+   .followers-list-inner{
+
+    width: 630px;
+    min-height: 250px;
+}
+.follower-single-item{
+    
+    display: flex;
+    img{
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        border: 2px solid $first-theme-color;
+    }
+}
+.follow-button{
+   
+    cursor: pointer;
+    transition: 1s;
+    margin-top: 15px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    width: 200px;
+    height: 50px;
+    background-color: $first-theme-color;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a{color: white;
+        font-size: 20px;
+        font-weight: 600;
+        text-align: center;
+    }
+    &:hover{
+        background-color: rgb(19, 122, 153);
+    }
+}
+}
+@media only screen  and (min-width: 500px) and (max-width: 650px)   {
+   .followers-list-inner{
+
+    width: 500px;
+    min-height: 250px;
+}
+.follower-single-item{
+    
+    display: flex;
+    img{
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        border: 2px solid $first-theme-color;
+    }
+}
+.follow-button{
+   
+    cursor: pointer;
+    transition: 1s;
+    margin-top: 15px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    width: 150px;
+    height: 50px;
+    background-color: $first-theme-color;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a{color: white;
+        font-size: 20px;
+        font-weight: 600;
+        text-align: center;
+    }
+    &:hover{
+        background-color: rgb(19, 122, 153);
+    }
+}
+}
+
+@media only screen  and (min-width: 400px) and (max-width: 500px)   {
+   .followers-list-inner{
+
+    width: 350px;
+    min-height: 250px;
+}
+.follower-single-item{
+    
+    display: flex;
+    img{
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        border: 2px solid $first-theme-color;
+    }
+    div{
+        p{
+            font-size: 15px;
+        }
+    }
+}
+.follow-button{
+   margin-left: 15px;
+    cursor: pointer;
+    transition: 1s;
+    margin-top: 15px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    width: 100px;
+    height: 50px;
+    background-color: $first-theme-color;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a{color: white;
+        font-size: 20px;
+        font-weight: 600;
+        text-align: center;
+    }
+    &:hover{
+        background-color: rgb(19, 122, 153);
+    }
+}
+}
+@media only screen  and (min-width: 350px) and (max-width: 400px)   {
+   .followers-list-inner{
+
+    width: 350px;
+    min-height: 250px;
+}
+.follower-single-item{
+    
+    display: flex;
+    img{
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        border: 2px solid $first-theme-color;
+    }
+    div{
+        p{
+            font-size: 15px;
+        }
+    }
+}
+.follow-button{
+   margin-left: 15px;
+    cursor: pointer;
+    transition: 1s;
+    margin-top: 15px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    width: 100px;
+    height: 50px;
+    background-color: $first-theme-color;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a{color: white;
+        font-size: 20px;
+        font-weight: 600;
+        text-align: center;
+    }
+    &:hover{
+        background-color: rgb(19, 122, 153);
+    }
+}
+}

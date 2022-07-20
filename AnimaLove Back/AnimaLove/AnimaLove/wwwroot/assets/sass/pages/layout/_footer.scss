@@ -1,0 +1,123 @@
+html {
+  scroll-behavior: smooth;
+}
+.footer-box{
+    margin-top: 100px;
+   background-color: $first-theme-color;
+   padding-top: 20px;
+    box-sizing: border-box;
+    .footer-box-inner{
+    min-height: 300px;
+   
+    border: 1px solid $first-theme-color;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+}
+
+.footer-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h5{ text-transform: uppercase;
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    font-weight: 600;
+}
+.footer-item{
+   
+    background-color: white;
+    height: 480px;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    border:  5px solid white;
+}
+.footer-item-adress{
+    padding-top: 100px;
+    box-sizing: border-box;
+    width: 400px;
+   
+    height: 480px;
+    margin-bottom: 40px;
+    margin-top: 40px;
+   p{
+       font-size: 20px;
+       color: white;
+   }
+}
+label{
+    font-weight: 600;
+    font-size: 20px;
+}
+.inputs{
+    padding: 30px;
+    box-sizing: border-box;
+}
+label::after{
+content: '*';
+color: red;
+
+}
+input{
+    height: 40px;
+}
+.input-message{
+    input{
+       height: 90px;
+    }
+}
+.inputs-inner{
+    margin-bottom: 30px;
+    input{
+        padding-left: 10px;
+        box-sizing: border-box;
+        width: 300px;
+    }
+}
+
+.send-button{
+    margin-bottom: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid transparent;
+    width: 130px;
+    background-color: $first-theme-color;
+    height: 40px;
+    transition: 1s;
+    a{
+        color: white;
+        font-size: 20px;
+        font-weight: 600;
+    }
+    &:hover{
+        background-color: white;
+        border: 1px solid $first-theme-color;
+        a{
+            color: $first-theme-color;
+        }
+    }
+}
+.scroll-arrow{
+    cursor: pointer;
+    background-color: $second-theme-color;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 410px;
+
+}
+.scroll-item{
+    position: relative;
+}
+.fa-arrow-up{
+    color: white;
+}

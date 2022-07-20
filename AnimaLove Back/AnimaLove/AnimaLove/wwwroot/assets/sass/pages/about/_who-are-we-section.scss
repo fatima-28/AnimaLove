@@ -1,0 +1,204 @@
+
+.who-are-we-inner{
+  
+    .who-are-we-title{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p{
+font-size: 40px;
+font-weight: 700;
+color: $first-theme-color;
+text-transform: uppercase;
+    }
+}
+}
+.info-item{
+  
+    display: flex;
+justify-content: center;
+align-items: center;}
+.info-item-center{
+     margin-top: -60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    box-sizing: border-box;
+    p{
+        font-size: 19px;
+    }
+}
+.who-are-we-info{
+   
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    div{
+         padding: 35px;
+         box-sizing: border-box;
+        width: 530px;
+        min-height: 530px;
+      
+        p{
+            font-size: 19px;
+        }
+        img{
+            width: 530px;
+            height: 530px;
+        }
+    }
+}
+.about-us-slide{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.slider-about-us-item{
+    margin-top: 20px;
+    margin-left: 30px;
+    width: 900px;
+    height: 500px;
+    border: 20px solid $first-theme-color;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+background-image: url(https://cdn.pixabay.com/photo/2017/02/20/18/03/cat-2083492__340.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+animation-name: background-change;
+animation-duration: 30s;
+animation-fill-mode: both;
+ animation-iteration-count: infinite;
+
+}
+ @keyframes background-change {
+  0% {background-image: url(https://www.marinavet.ae/wp-content/uploads/2020/11/petboarding-dog-img.jpg);}
+    40% {background-image: url(https://wallpaper.dog/large/10795599.jpg);}
+  80% {background-image: url(https://c4.wallpaperflare.com/wallpaper/717/519/756/dogs-dog-animal-baby-animal-wallpaper-preview.jpg);}
+    100%{background-image: url(https://wallpaperaccess.com/full/32056.jpg);}
+    
+   
+}
+@media only screen and (min-width: 375px){
+.slider-about-us-item{
+    
+    width: 300px;
+    height: 300px;}
+
+   
+}
+@media only screen and (min-width: 414px){
+.slider-about-us-item{
+    
+    width: 300px;
+    height: 300px;}
+
+   
+}
+@media only screen and (min-width: 390px){
+.slider-about-us-item{
+    
+    width: 300px;
+    height: 300px;}
+
+   
+}
+@media only screen and (min-width: 393px){
+.slider-about-us-item{
+    
+    width: 300px;
+    height: 300px;}
+
+   
+}
+@media only screen and (min-width: 360px){
+.slider-about-us-item{
+    
+    width: 300px;
+    height: 300px;}
+
+   
+}
+@media only screen and (min-width: 540px){
+.slider-about-us-item{
+    
+    width: 400px;
+    height: 400px;}
+
+   
+}
+@media only screen and (min-width: 280px){
+.slider-about-us-item{
+    
+    width: 250px;
+    height: 50px;}
+
+   
+}
+@media only screen and (min-width: 820px){
+.slider-about-us-item{
+    
+    width: 500px;
+    height: 350px;}
+
+   
+}
+@media only screen and (min-width: 768px){
+.slider-about-us-item{
+    
+    width: 500px;
+    height: 350px;}
+
+   
+}
+@media only screen and (min-width: 912px){
+.slider-about-us-item{
+    
+    width: 900px;
+    height: 450px;}
+
+   
+}
+@media only screen and (min-width: 1280px){
+.slider-about-us-item{
+    
+    width: 900px;
+    height: 550px;}
+
+   
+}
+@media only screen and (min-width: 600px) and (max-width:760px){
+.slider-about-us-item{
+    
+    width: 350px;
+    height: 350px;}
+
+   
+}
+@media only screen and (min-width: 500px) and (max-width:600px){
+.slider-about-us-item{
+    
+    width: 350px;
+    height: 350px;}
+
+   
+}
+@media only screen and (min-width: 400px) and (max-width:500px){
+.slider-about-us-item{
+    
+    width: 350px;
+    height: 350px;}
+
+   
+}
+@media only screen and (min-width: 300px) and (max-width:400px){
+.slider-about-us-item{
+    
+    width: 350px;
+    height: 350px;}
+
+   
+}

@@ -1,0 +1,326 @@
+﻿@using AnimaLove.ViewModels
+
+@model HomeViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!-- main started -->
+<main>
+    <!-- slider section started -->
+    <section id="slider">
+        <div class="slider-box">
+            <div class="slider-text">
+                <div class="slider-text-inner">
+
+                    @foreach (var summary in Model.SlideSummaries)
+                    {
+                        <h3>@summary.Title</h3>
+                        <p>
+                            @summary.Description
+                        </p>
+                    }
+
+                </div>
+            </div>
+            <div class="slider-box-inner">
+
+                @foreach (var slide in Model.Slides)
+                {
+                    <div><img src="~/assets/img/@slide.Image" alt="animal-image"></div>
+                }
+
+
+
+               
+
+            </div>
+        </div>
+    </section>
+    <!-- slider section end -->
+    <!-- adopt  pet section started -->
+    <section id="adoption">
+        <div class="adoption">
+            <div class="adoption-inner">
+                <div class="adoption-title">
+                    <p>Adopt Pet</p>
+                </div>
+                <div class="categories">
+                    <ul id="myFirstBtnContainer">
+                        <li class="btn active" onclick="filterSelection('all')">
+                            <p class="categories-item ">All</p>
+                        </li>
+                        <li class="btn" onclick="filterSelection('cat')">
+                            <p class="categories-item">Cat</p>
+                        </li>
+                        <li class="btn" onclick="filterSelection('dog')">
+                            <p class="categories-item">Dog</p>
+                        </li>
+                        <li class="btn" onclick="filterSelection('parrot')">
+                            <p class="categories-item">Parrot</p>
+                        </li>
+                        <li class="btn" onclick="filterSelection('fish')">
+                            <p class="categories-item">Fish</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="cards">
+
+                    <div class="cards-row container">
+                        <div class="column filterDiv cat">
+                            <div class="card-item ">
+                                <div class="animal-image">
+                                    <img src="~/assets/img/CAT2.jpg" alt="animal image">
+                                </div>
+                                <div class="animal-context">
+                                    <p class="animal-name">Barrot</p>
+                                    <p class="animal-message">
+                                        Hello my name is Barrot. I live in Ukrain. I lost my
+                                        house. Can u help me? lore m ipsum dolor
+                                    </p>
+                                    <div class="main-adopt-button">
+                                        <div class="adopt-button">
+                                            <a href="www">Adopt</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="column filterDiv fish">
+                            <div class="card-item ">
+                                <div class="animal-image">
+                                    <img src="~/assets/img/fish2.jpg" alt="animal image">
+                                </div>
+                                <div class="animal-context">
+                                    <p class="animal-name">Linda</p>
+                                    <p class="animal-message">
+                                        Hello my name is Barrot. I live in Ukrain. I lost my
+                                        house. Can u help me? lore m ipsum dolor
+                                    </p>
+                                    <div class="main-adopt-button">
+                                        <div class="adopt-button">
+                                            <a href="www">Adopt</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="column filterDiv fish">
+                            <div class="card-item ">
+                                <div class="animal-image">
+                                    <img src="~/assets/img/fish1.jpg" alt="animal image">
+                                </div>
+                                <div class="animal-context">
+                                    <p class="animal-name">Alina</p>
+                                    <p class="animal-message">
+                                        Hello my name is Barrot. I live in Ukrain. I lost my
+                                        house. Can u help me? lore m ipsum dolor
+                                    </p>
+                                    <div class="main-adopt-button">
+                                        <div class="adopt-button">
+                                            <a href="www">Adopt</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="column filterDiv parrot ">
+                            <div class="card-item ">
+                                <div class="animal-image">
+                                    <img src="~/assets/img/parrot2.jpg" alt="animal image">
+                                </div>
+                                <div class="animal-context">
+                                    <p class="animal-name">Narnia</p>
+                                    <p class="animal-message">
+                                        Hello my name is Barrot. I live in Ukrain. I lost my
+                                        house. Can u help me? lore m ipsum dolor
+                                    </p>
+                                    <div class="main-adopt-button">
+                                        <div class="adopt-button">
+                                            <a href="www">Adopt</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="column filterDiv parrot">
+                            <div class="card-item ">
+                                <div class="animal-image">
+                                    <img src="~/assets/img/PARROT1.jpg" alt="animal image">
+                                </div>
+                                <div class="animal-context">
+                                    <p class="animal-name">Barrot</p>
+                                    <p class="animal-message">
+                                        Hello my name is Barrot. I live in Ukrain. I lost my
+                                        house. Can u help me? lore m ipsum dolor
+                                    </p>
+                                    <div class="main-adopt-button">
+                                        <div class="adopt-button">
+                                            <a href="www">Adopt</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="column filterDiv dog">
+                            <div class="card-item ">
+                                <div class="animal-image">
+                                    <img src="~/assets/img/DOG-IMG.jpg" alt="animal image">
+                                </div>
+                                <div class="animal-context">
+                                    <p class="animal-name">Purple</p>
+                                    <p class="animal-message">
+                                        Hello my name is Barrot. I live in Ukrain. I lost my
+                                        house. Can u help me? lore m ipsum dolor
+                                    </p>
+                                    <div class="main-adopt-button">
+                                        <div class="adopt-button">
+                                            <a href="www">Adopt</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="main-adopt-button load-more-main">
+                <div class=" load-more">
+                    <a href="www">Load More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- adopt  pet section ended -->
+    <!-- parallax section started -->
+    <section id="parallax">
+        <div class="parallax">
+            <div class="parallax-inner">
+
+            </div>
+        </div>
+    </section>
+    <!-- parallax section ended -->
+    <!-- why animals section started -->
+    <section id="why-animals">
+        <div class="why-animals">
+            <h1>WHy Animals should be necessery for us?</h1>
+            <div class="why-animals-inner animals-inner">
+                <div class="why-animals-inner-box">
+                    <div class="why-animals-inner-items">
+                        <p>
+                            lorem ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            Lorem Ipsum has been the industry's standard
+                            dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                            scrambled it to make a type specimen
+                            book. It h dummy text ever since the 1500s, when an unknown printer took a galley of
+                            type and
+                            scrambled it ook. It h dummy text ever since the 1500s, when an unknown printer took a
+                            galley of
+                            type and
+                            scrambled its to make a type specimen
+                            book. It has survived not only five centuries, but also the leap into electronic
+                            typesetting, remaining essentiallyas survived not only five centuries, but also the leap
+                            into electronic
+                            typesetting, remaining essentially
+                            unchanged. It was popularised in the 1960s with the release of Letraset sheets
+                            containing Lorem Ipsum passages, and more
+                            recently with desktop publishing software like Aldus PageMaker including versions of
+                            Lorem Ipsum.
+                        </p>
+                    </div>
+
+                    <div class="why-animals-inner-items">
+                        <img src="~/assets/img/awsome-cat-img.jpg" alt="">
+                    </div>
+                </div>
+                <div class="why-animals-inner-box">
+                    <div class="why-animals-inner-items">
+                        <img src="~/assets/img/cat-with-glasses.jpg" alt="">
+                    </div>
+                    <div class="why-animals-inner-items">
+                        <p>
+                            lorem ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            Lorem Ip dummy text ever since the 1500s, when an unknown printer took a galley of type
+                            and
+                            remaining essentiallyssum has been the industry's standard
+                            dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                            scrambled it to make a type specimen
+                            book. It has survived not only five centuries, but also the leap into electronic
+                            typesetting, remaining essentially
+                            dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                            scrambled it to make a type specimen
+                            book. It has survived not only five centuries, but also the leap into electronic
+                            typesetting, remaining essentially dummy text ever since the 1500s, when an unknown
+                            printer took a galley of type and
+                            scrambled it to make a type specimen
+                            book. It has survived not only five centuries, but also the leap into electronic
+                            typesetting, remaining essentially dummy text ever since the 1500s, when an unknown
+                            printer took a galley of type and
+                            scramby five centuries, but also the leap into electronic
+                            t and more
+                            recently with desktop publishing software like Aldus PageMaker including versions of
+                            Lorem Ipsum.
+                        </p>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- why animals section ended -->
+    <!-- our galerry section started -->
+    <section id="our-galerry">
+        <div class="our-galerry">
+            <div class="our-galerry-inner">
+                <div class="our-galerry-inner-main">
+                    <h2>Our gallery</h2>
+                </div>
+                <div class="our-galery-images-main">
+
+                    <div class="our-galery-images our-gallery-row">
+                        <div>
+                            <img src="~/assets/img/baby-dog.jpg" alt="our galery photos">
+                        </div>
+                        <div>
+                            <img src="~/assets/img/CAT1.jpeg" alt="our galery photos">
+                        </div>
+                        <div>
+                            <img src="~/assets/img/kittens.jpg" alt="our galery photos">
+                        </div>
+                        <div>
+                            <img src="~/assets/img/baby-cat.jpg" alt="our galery photos">
+                        </div>
+                        <div>
+                            <img src="~/assets/img/whitecat.webp" alt="our galery photos">
+                        </div>
+                        <div>
+                            <img src="~/assets/img/cute-cat-and-dog-friends-1.jpg" alt="our galery photos">
+                        </div>
+                        <div>
+                            <img src="~/assets/img/baby-dog-yellow.jpg" alt="our galery photos">
+                        </div>
+                        <div>
+                            <img src="~/assets/img/newborn-babycat.jpg" alt="our galery photos">
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- our galerry section ended -->
+</main>
+<!-- main ended -->

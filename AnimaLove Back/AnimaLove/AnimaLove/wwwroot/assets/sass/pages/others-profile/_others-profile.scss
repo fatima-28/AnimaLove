@@ -1,0 +1,29 @@
+.fa-arrow-left{
+    font-size: 20px;
+    color: gray;
+}
+
+
+    div.follow{
+        margin-top: 10px;
+         background-color: $first-theme-color;
+         border-radius: 20px;
+         cursor: pointer;
+         transition: 1s;
+       
+        a{
+             text-decoration: none;
+           color: rgb(255, 255, 255);
+            font-weight: 600;
+            font-size: 30px;
+            &:hover{
+                color: white;
+            }
+        }
+        &:hover{
+             background-color: rgb(30, 132, 190);
+        }
+    }
+    .fa-message{
+        color: $first-theme-color;
+    }

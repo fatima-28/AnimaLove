@@ -1,0 +1,974 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    padding-left: 80px;
+      padding-right: 80px;
+    box-sizing: border-box;
+   
+     top: 0;
+     height: 120px;
+    width: 100%;
+    z-index: 2;
+       background-color: white;
+   
+  
+}
+.remove-product{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 25px;
+}
+a{
+    text-decoration: none;
+}
+
+// animation underline
+.pages-item {
+  position: relative;
+  transition: 1s ease;
+  text-decoration: none;
+}
+
+.pages-item:hover {
+  color: #000;
+}
+
+.pages-item::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #000;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.pages-item:hover::before {
+  transform: scaleX(1);
+}
+
+.pages-item:hover{
+    text-decoration: none;
+}
+.navbar{
+ 
+    display: flex;
+    align-items: center;
+    
+}
+
+
+
+//dropdown 
+.dropdown-orginal-main{
+    position: relative;
+}
+.dropdown-main{
+    position: relative;
+    z-index: 5;
+
+    
+   
+    .dropdown-inner-item{
+   transition: all .5s ease;
+   opacity: 0;
+   height: 0;
+        min-width: 250px;
+        border-radius: 10px;
+        min-height: 150px;
+         background-color: rgb(255, 255, 255);
+        position: absolute;
+        padding: 20px;
+
+        box-sizing: border-box;
+      
+      
+        top: 5px;
+        div{
+            margin-bottom: 9px;
+            a{ text-transform: uppercase;
+                text-decoration: none;
+                color: $first-theme-color;
+                transition: 1s;
+                &:hover{
+                    color: black;
+                }
+            }
+            
+        }
+    }
+}
+.shop-pages-item-list{
+    
+    transition: 1s;
+&:hover{
+ 
+   
+        .dropdown-main{
+            .dropdown-inner-item{
+                 opacity: 1;
+   min-height: 200px;
+            }
+        
+    
+}
+}
+   
+
+}
+
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 8;
+  top: 0;
+  left: 0;
+ 
+  background-color: #3e97a3b9;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 26px;
+  color: #000000;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: white;
+}
+.overlay-content{
+    a{
+        text-transform: uppercase;
+    }
+}
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 50px;
+}
+
+
+.logo{
+    width: 140px;
+    height: 140px;
+    position: relative;
+    bottom: 5px;
+    img{
+        width: 100%;
+        height: 100%;
+    } 
+}
+.pages{
+    display: block;
+  ul{
+      margin-right: 100px;
+      list-style: none;
+        display: flex;
+    li{
+      
+        margin-left: 70px;
+        cursor: pointer;
+        font-size: 18px;
+        text-transform: uppercase;
+       
+        font-weight: 600;
+        a{
+             color: $first-theme-color;
+        }
+    }
+    li:last-child{
+         margin-left: 15px;
+          position: relative;
+          bottom: 5px;
+        cursor: pointer;
+    }
+    .active{
+    color:$second-theme-color;
+}
+  }
+}
+
+.profile-img{
+    width: 40px;
+    border-radius: 50%;
+    height: 40px;
+  
+}
+.basket{
+    i{
+        font-size: 40px;
+        position: relative;
+        cursor: pointer;
+        bottom: 15px;
+    }
+}
+.icon{
+    font-size: 40px;
+        position: relative;
+        cursor: pointer;
+        bottom: 19px;
+}
+.hamburger{
+    display: none;
+     i{
+          font-size: 30px;
+        position: relative;
+        cursor: pointer;
+        bottom: 15px;
+     }
+ }
+header{
+    z-index: 15;
+}
+.active-pages-item {
+    color: black !important;
+}
+
+.basket-box-inside::after{
+ display: inline-block;
+    content: "";
+    border-top: 0.1px solid rgb(100, 100, 100);
+    width: 100%;
+    
+    transform: translateY(-1rem);
+}
+.signs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.basket-box-inside-inner{
+    display: flex;
+    .basket-img{
+        width: 130px;
+        height: 130px;
+       
+        margin-right: 10px;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+       
+    }
+    div{
+        p{
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+    }
+}
+.minus-basket-item{
+    margin-left: 50px;
+}
+
+.plus-basket{
+
+  font-size: 30px !important;
+   color: $first-theme-color !important;
+   
+}
+.signs{
+    margin-left: 20px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+.minus-basket{
+
+  font-size: 30px !important;
+   color: $first-theme-color !important;
+}
+.basket-product-description{
+    p{
+        text-align: center;
+    }
+    .basket-item-price{
+        color: green;
+        font-size: 20px;
+    }
+    .basket-item-size{
+        color: rgb(128, 128, 128);
+        margin-bottom: 10px;
+    }
+   
+}
+@media only screen and (width: 375px) {
+header{
+    padding-left: 40px;
+      padding-right: 40px;
+    box-sizing: border-box;
+   .pages{
+       display: none;
+
+   }
+   .hamburger{
+       display: block;
+       cursor: pointer;
+   }
+  
+}
+    .logo{
+    width: 140px;
+    height: 140px;
+   
+    img{
+        width: 100%;
+        height: 100%;
+    } 
+}
+
+header{
+    width: 400px;
+}
+
+
+}
+@media only screen and (width: 412px) {
+   
+header{
+    padding-left: 40px;
+      padding-right: 40px;
+    box-sizing: border-box;
+   .pages{
+       display: none;
+
+   }
+   .hamburger{
+       display: block;
+       cursor: pointer;
+   }
+  
+}
+    .logo{
+    width: 140px;
+    height: 140px;
+   
+    img{
+        width: 100%;
+        height: 100%;
+    } 
+}
+.basket{
+    i{
+        font-size: 30px;
+        position: relative;
+        cursor: pointer;
+        bottom: 15px;
+    }
+}
+header{
+    width: 415px;
+}
+}
+@media only screen and (width: 414px) {
+    header{
+    width: 415px;
+}
+
+
+header{
+    padding-left: 40px;
+      padding-right: 40px;
+    box-sizing: border-box;
+   .pages{
+       display: none;
+
+   }
+   .hamburger{
+       display: block;
+       cursor: pointer;
+   }
+  
+}
+    .logo{
+    width: 140px;
+    height: 140px;
+   
+    img{
+        width: 100%;
+        height: 100%;
+    } 
+}
+.basket{
+    i{
+        font-size: 30px;
+        position: relative;
+        cursor: pointer;
+        bottom: 15px;
+    }
+}
+}
+
+.basket-box{
+    position: relative;
+    .basket-box-inner{
+        display: none;
+        padding:20px 10px;
+        box-sizing: border-box;
+        box-shadow: 5px 5px 15px;
+        border: 1px solid black;
+        position: absolute;
+        right: 0px;
+       z-index: 2;
+        width: 250px;
+        min-height: 50px;
+        background-color: rgb(255, 255, 255);
+       
+        div{
+            margin-bottom: 20px;
+            position: relative;
+            i{position: absolute;
+                top: -10px;
+                right: 10px;
+                
+                color: rgb(187, 8, 8);
+                font-size: 20px;
+            }
+        }
+
+    }
+}
+
+.active-item{
+ color: #000000 !important;
+}
+@media only screen and (width: 390px)  {
+    header{
+        width: 390px;
+    }
+}
+@media only screen and (width: 360px)  {
+    header{
+        width: 360px;
+    }
+}
+@media only screen and (width: 393px)  {
+    header{
+        width: 393px;
+    }
+}
+@media only screen and (min-width: 360px) and (max-width: 393px)  {
+
+
+    header{
+    padding-left: 40px;
+      padding-right: 40px;
+    box-sizing: border-box;
+   .pages{
+       display: none;
+
+   }
+   .hamburger{
+       display: block;
+       cursor: pointer;
+   }
+  
+}
+    .logo{
+    width: 140px;
+    height: 140px;
+   
+    img{
+        width: 100%;
+        height: 100%;
+    } 
+}
+.basket{
+    i{
+        font-size: 30px;
+        position: relative;
+        cursor: pointer;
+        bottom: 15px;
+    }
+}
+.basket{
+    margin-right: 50px;
+    i{
+        font-size: 30px;
+        position: relative;
+        cursor: pointer;
+        bottom: 15px;
+    }
+}
+
+}
+
+
+@media only screen and (width: 820px) {
+header{
+    padding-left: 120px;
+      padding-right: 120px;
+    box-sizing: border-box;
+   .pages{
+       display: none;
+
+   }
+   .hamburger{
+       display: block;
+       cursor: pointer;
+   }
+  
+}
+    .logo{
+    width: 140px;
+    height: 140px;
+   
+    img{
+        width: 100%;
+        height: 100%;
+    } 
+}
+.basket{
+    i{
+        font-size: 30px;
+        position: relative;
+        cursor: pointer;
+        bottom: 15px;
+    }
+}
+}
+@media only screen and (width: 768px) {
+header{
+    padding-left: 120px;
+      padding-right: 120px;
+    box-sizing: border-box;
+   .pages{
+       display: none;
+
+   }
+   .hamburger{
+       display: block;
+       cursor: pointer;
+   }
+  
+}
+    .logo{
+    width: 140px;
+    height: 140px;
+   
+    img{
+        width: 100%;
+        height: 100%;
+    } 
+}
+.basket{
+    i{
+        font-size: 30px;
+        position: relative;
+        cursor: pointer;
+        bottom: 15px;
+    }
+}
+}
+@media only screen and (width: 912px) {
+header{
+    padding-left: 120px;
+      padding-right: 120px;
+    box-sizing: border-box;
+   .pages{
+       display: none;
+
+   }
+   .hamburger{
+       display: block;
+       cursor: pointer;
+   }
+  
+}
+    .logo{
+    width: 140px;
+    height: 140px;
+   
+    img{
+        width: 100%;
+        height: 100%;
+    } 
+}
+.basket{
+    i{
+        font-size: 30px;
+        position: relative;
+        cursor: pointer;
+        bottom: 15px;
+    }
+}
+}
+@media only screen and (width: 540px) {
+header{
+    padding-left: 70px;
+      padding-right: 70px;
+    box-sizing: border-box;
+   .pages{
+       display: none;
+
+   }
+   .hamburger{
+       display: block;
+       cursor: pointer;
+   }
+  
+}
+    .logo{
+    width: 140px;
+    height: 140px;
+   
+    img{
+        width: 100%;
+        height: 100%;
+    } 
+}
+.basket{
+    i{
+        font-size: 30px;
+        position: relative;
+        cursor: pointer;
+        bottom: 15px;
+    }
+}
+}
+@media only screen and (width: 280px) {
+header{
+    padding-left: 1px;
+      padding-right: 1px;
+    box-sizing: border-box;
+   .pages{
+       display: none;
+
+   }
+   .hamburger{
+       display: block;
+       cursor: pointer;
+   }
+  
+}
+    .logo{
+    width: 140px;
+    height: 140px;
+   
+    img{
+        width: 100%;
+        height: 100%;
+    } 
+}
+.basket{
+    i{
+        font-size: 30px;
+        position: relative;
+        cursor: pointer;
+        bottom: 15px;
+    }
+}
+}
+@media only screen and (width: 1024px) {
+header{
+    padding-left: 50px;
+      padding-right: 50px;
+    box-sizing: border-box;
+   
+  
+}
+.hamburger{
+    display: none;
+}
+.pages{
+    display: block;
+    ul{
+        li{
+            font-size: 15px;
+        }
+    .profile-img{
+    width: 30px;
+    border-radius: 50%;
+    height: 30px;
+  
+}
+  }
+    }
+    .logo{
+    width: 100px;
+    height: 100px;
+   
+    img{
+        width: 100%;
+        height: 100%;
+    } 
+}
+.basket{
+    i{
+        font-size: 30px;
+        position: relative;
+        cursor: pointer;
+        bottom: 15px;
+    }
+}
+}
+@media only screen and (min-width: 999px)and (max-width: 1166px) {
+header{
+    padding-left: 50px;
+      padding-right: 50px;
+    box-sizing: border-box;
+   
+  
+}
+.hamburger{
+    display: none;
+}
+.pages{
+    display: block;
+    ul{
+        li{
+            font-size: 15px;
+        }
+    .profile-img{
+    width: 30px;
+    border-radius: 50%;
+    height: 30px;
+  
+}
+  }
+    }
+    .logo{
+    width: 100px;
+    height: 100px;
+   
+    img{
+        width: 100%;
+        height: 100%;
+    } 
+}
+.basket{
+    i{
+        font-size: 30px;
+        position: relative;
+        cursor: pointer;
+        bottom: 15px;
+    }
+}
+}
+@media only screen and (min-width: 670px)and (max-width: 999px) {
+header{
+    padding-left: 5px;
+      padding-right: 5px;
+    box-sizing: border-box;
+   
+  
+}
+.hamburger{
+    display: none;
+}
+.pages{
+    display: block;
+    
+    ul{
+        li{
+            margin-left: 30px;
+            font-size: 13px;
+        }
+    .profile-img{
+    width: 30px;
+    border-radius: 50%;
+    height: 30px;
+  
+}
+  }
+    }
+    .logo{
+    width: 90px;
+    height: 90px;
+   
+    img{
+        width: 100%;
+        height: 100%;
+    } 
+}
+.basket{
+   
+    i{
+        font-size: 25px;
+        position: relative;
+        cursor: pointer;
+        bottom: 15px;
+    }
+}
+}
+@media only screen and (min-width: 615px)and (max-width: 670px) {
+header{
+    padding-left: 1px;
+      padding-right: 1px;
+    box-sizing: border-box;
+  
+}
+.hamburger{
+    display: none;
+}
+.pages{
+    display: block;
+    
+    ul{
+        li{
+            margin-left: 20px;
+            font-size: 13px;
+        }
+    .profile-img{
+    width: 30px;
+    border-radius: 50%;
+    height: 30px;
+  
+}
+  }
+    }
+    .logo{
+    width: 90px;
+    height: 90px;
+   
+    img{
+        width: 100%;
+        height: 100%;
+    } 
+}
+.basket{
+   
+    i{
+        font-size: 20px;
+        position: relative;
+        cursor: pointer;
+        bottom: 15px;
+    }
+}
+}
+@media only screen and (min-width: 500px)and (max-width: 615px) {
+header{
+    padding-left: 1px;
+      padding-right: 1px;
+    box-sizing: border-box;
+  
+}
+.hamburger{
+    display: block;
+}
+.pages{
+    display: none;
+    
+   
+    }
+    .logo{
+    width: 90px;
+    height: 90px;
+   
+    img{
+        width: 100%;
+        height: 100%;
+    } 
+}
+.basket{
+   
+    i{
+        font-size: 25px;
+        position: relative;
+        cursor: pointer;
+        bottom: 15px;
+    }
+}
+}
+@media only screen and (min-width: 250px)and (max-width: 500px) {
+header{
+    padding-left: 1px;
+      padding-right: 1px;
+    box-sizing: border-box;
+  
+}
+.hamburger{
+    display: block;
+}
+.pages{
+    display: none;
+    
+   
+    }
+    .logo{
+    width: 90px;
+    height: 90px;
+   
+    img{
+        width: 100%;
+        height: 100%;
+    } 
+}
+.basket{
+   
+    i{
+        font-size: 25px;
+        position: relative;
+        cursor: pointer;
+        bottom: 15px;
+    }
+}
+}
+@media only screen and (min-width: 616px) {
+
+    
+.overlay{
+    display: none;
+}
+}
+
+@media only screen and (width: 412px) {
+    header{
+    width: 412px;
+}
+}
+
+@media only screen and (width: 820px) {
+    header{
+    width: 820px;
+}
+}
+@media only screen and (width: 768px) {
+    header{
+    width: 768px;
+}
+}
+@media only screen and (width: 912px) {
+    header{
+    width: 912px;
+}
+}
+@media only screen and (width: 540px) {
+    header{
+    width: 540px;
+}
+}
+@media only screen and (width: 280px) {
+    header{
+    width: 280px;
+}
+}
+@media only screen and (width: 1024px) {
+    header{
+    width: 1024px;
+}
+}
