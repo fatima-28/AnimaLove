@@ -293,3 +293,4 @@ C:\Users\mac\Desktop\AnimaLove Main\AnimaLove\AnimaLove Back\AnimaLove\AnimaLove
 C:\Users\mac\Desktop\AnimaLove Main\AnimaLove\AnimaLove Back\AnimaLove\AnimaLove\obj\Debug\netcoreapp3.1\AnimaLove.pdb
 C:\Users\mac\Desktop\AnimaLove Main\AnimaLove\AnimaLove Back\AnimaLove\AnimaLove\obj\Debug\netcoreapp3.1\AnimaLove.genruntimeconfig.cache
 C:\Users\mac\Desktop\AnimaLove Main\AnimaLove\AnimaLove Back\AnimaLove\AnimaLove\obj\Debug\netcoreapp3.1\Razor\Views\Shop\Index.cshtml.g.cs
+C:\Users\mac\Desktop\AnimaLove\AnimaLove Back\AnimaLove\AnimaLove\obj\Debug\netcoreapp3.1\Razor\Views\Shop\Index.cshtml.g.cs

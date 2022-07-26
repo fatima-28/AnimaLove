@@ -63,12 +63,12 @@
                 </div>
                 <div class="cards">
 
-                    <div class="cards-row container"  data-aos="fade-down" data-aos-duration="1000">
+                    <div class="cards-row container"  >
 
 
                         @foreach (var pet in Model.Pets)
                         {
-                            <div class="column filterDiv @pet.Category.Name.ToLower();">
+                            <div class="column filterDiv @pet.Category.Name.ToLower();" data-aos="fade-down" data-aos-duration="2000">
                                 <div class="card-item ">
                                     <div class="animal-image">
                                         <img src="~/assets/img/@pet.Image" alt="animal image">

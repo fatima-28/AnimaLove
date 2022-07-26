@@ -8481,11 +8481,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mac\\Desktop\\AnimaLove Main\\AnimaLove\\AnimaLove Back\\AnimaLove\\AnimaLove\\AnimaLove.csproj",
+      "projectUniqueName": "C:\\Users\\mac\\Desktop\\AnimaLove\\AnimaLove Back\\AnimaLove\\AnimaLove\\AnimaLove.csproj",
       "projectName": "AnimaLove",
-      "projectPath": "C:\\Users\\mac\\Desktop\\AnimaLove Main\\AnimaLove\\AnimaLove Back\\AnimaLove\\AnimaLove\\AnimaLove.csproj",
+      "projectPath": "C:\\Users\\mac\\Desktop\\AnimaLove\\AnimaLove Back\\AnimaLove\\AnimaLove\\AnimaLove.csproj",
       "packagesPath": "C:\\Users\\mac\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mac\\Desktop\\AnimaLove Main\\AnimaLove\\AnimaLove Back\\AnimaLove\\AnimaLove\\obj\\",
+      "outputPath": "C:\\Users\\mac\\Desktop\\AnimaLove\\AnimaLove Back\\AnimaLove\\AnimaLove\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
