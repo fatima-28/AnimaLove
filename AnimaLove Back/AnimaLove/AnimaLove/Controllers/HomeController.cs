@@ -20,7 +20,10 @@ namespace AnimaLove.Controllers
             HomeViewModel home = new HomeViewModel
             {
                 Slides = _context.Slides.Where(s => !s.IsDeleted).ToList(),
-                SlideSummaries= _context.SlideSummaries.Where(s => !s.IsDeleted).ToList()
+                SlideSummaries= _context.SlideSummaries.Where(s => !s.IsDeleted).ToList(),
+                Categories= _context.Categories.Where(c => !c.IsDeleted).ToList(),
+                Pets= _context.Pets.Where(p => !p.IsAdopted).ToList(),
+                Galleries= _context.Galleries.Where(p => !p.IsDeleted).ToList()
 
             };
             return View(home);

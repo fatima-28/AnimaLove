@@ -14,5 +14,10 @@ namespace AnimaLove.DAL
         }
         public DbSet<Slide> Slides { get; set; }
         public DbSet<SlideSummary> SlideSummaries { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Pet> Pets { get; set; }
+        public DbSet<Gallery> Galleries { get; set; }
+        public DbSet<Product> Products { get; set; }
+
     }
 }

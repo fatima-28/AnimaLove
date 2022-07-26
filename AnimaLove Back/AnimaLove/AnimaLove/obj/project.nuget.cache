@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "w4fbbm+rgkO3U9JORQdKWov5XVqJAJ5badL57v3nApkhwb07SBUoMADBA6OU/hJT5uYessoWIWlL6bOVpKs+ZA==",
+  "dgSpecHash": "AYEZcHlwNqMUHn5Sezw4CW7TjcCupNYt3rPeCeD5xSCXB59zEm0JEg7ufBuN2n9VRGRZnZtMZfdIiESin0YQFg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\mac\\Desktop\\AnimaLove\\AnimaLove Back\\AnimaLove\\AnimaLove\\AnimaLove.csproj",
+  "projectFilePath": "C:\\Users\\mac\\Desktop\\AnimaLove Main\\AnimaLove\\AnimaLove Back\\AnimaLove\\AnimaLove\\AnimaLove.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mac\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\mac\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",

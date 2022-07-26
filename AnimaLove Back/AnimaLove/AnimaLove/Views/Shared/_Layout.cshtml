@@ -27,6 +27,7 @@
           rel="stylesheet">
     <link rel="icon" href="~/assets/img/icon-img.png">
     <link rel="stylesheet" href="~/assets/css/main.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <title>AnimaLove</title>
 </head>
 
@@ -42,10 +43,10 @@
             <div class="nav-inner pages">
                 <ul class="bntcontainer" id="bntcontainer">
                     <li class="list">
-                        <a href="#" class=" pages-item active-pages-item ">Home</a>
+                        <a class=" pages-item " asp-controller="Home" asp-action="Index">Home</a>
                     </li>
                     <li class="shop-pages-item-list">
-                        <a href="#" class="pages-item shop-pages-item">Shop</a>
+                        <a class="pages-item shop-pages-item" asp-controller="Shop" asp-action="Index">Shop</a>
                         <div class="dropdown-orginal-main">
                             <div class="dropdown-main">
                                 <div class="dropdown-inner-item">
@@ -220,7 +221,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
             integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="~/assets/js/animals-api.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
     <script src="~/assets/js/hamburger-bars.js"></script>
     <script src="~/assets/js/main.js"></script>
     <script src="~/assets/js/slider.js"></script>

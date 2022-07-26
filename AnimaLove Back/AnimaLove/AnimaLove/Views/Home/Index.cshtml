@@ -42,151 +42,51 @@
     <section id="adoption">
         <div class="adoption">
             <div class="adoption-inner">
-                <div class="adoption-title">
+                <div class="adoption-title" data-aos="fade-down" data-aos-duration="1000">
                     <p>Adopt Pet</p>
                 </div>
-                <div class="categories">
+                <div class="categories"  data-aos="fade-down" data-aos-duration="1000">
                     <ul id="myFirstBtnContainer">
                         <li class="btn active" onclick="filterSelection('all')">
                             <p class="categories-item ">All</p>
                         </li>
-                        <li class="btn" onclick="filterSelection('cat')">
-                            <p class="categories-item">Cat</p>
-                        </li>
-                        <li class="btn" onclick="filterSelection('dog')">
-                            <p class="categories-item">Dog</p>
-                        </li>
-                        <li class="btn" onclick="filterSelection('parrot')">
-                            <p class="categories-item">Parrot</p>
-                        </li>
-                        <li class="btn" onclick="filterSelection('fish')">
-                            <p class="categories-item">Fish</p>
-                        </li>
+
+
+                        @foreach (var category in Model.Categories)
+                        {
+                            <li class="btn" onclick="filterSelection('@category.Name.ToLower()')">
+                                <p class="categories-item">@category.Name</p>
+                            </li>
+                           
+                        }
                     </ul>
                 </div>
                 <div class="cards">
 
-                    <div class="cards-row container">
-                        <div class="column filterDiv cat">
-                            <div class="card-item ">
-                                <div class="animal-image">
-                                    <img src="~/assets/img/CAT2.jpg" alt="animal image">
-                                </div>
-                                <div class="animal-context">
-                                    <p class="animal-name">Barrot</p>
-                                    <p class="animal-message">
-                                        Hello my name is Barrot. I live in Ukrain. I lost my
-                                        house. Can u help me? lore m ipsum dolor
-                                    </p>
-                                    <div class="main-adopt-button">
-                                        <div class="adopt-button">
-                                            <a href="www">Adopt</a>
+                    <div class="cards-row container"  data-aos="fade-down" data-aos-duration="1000">
+
+
+                        @foreach (var pet in Model.Pets)
+                        {
+                            <div class="column filterDiv @pet.Category.Name.ToLower();">
+                                <div class="card-item ">
+                                    <div class="animal-image">
+                                        <img src="~/assets/img/@pet.Image" alt="animal image">
+                                    </div>
+                                    <div class="animal-context">
+                                        <p class="animal-name">@pet.Name</p>
+                                        <p class="animal-message">
+                                           @pet.Description
+                                        </p>
+                                        <div class="main-adopt-button">
+                                            <div class="adopt-button">
+                                                <a href="www">Adopt</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="column filterDiv fish">
-                            <div class="card-item ">
-                                <div class="animal-image">
-                                    <img src="~/assets/img/fish2.jpg" alt="animal image">
-                                </div>
-                                <div class="animal-context">
-                                    <p class="animal-name">Linda</p>
-                                    <p class="animal-message">
-                                        Hello my name is Barrot. I live in Ukrain. I lost my
-                                        house. Can u help me? lore m ipsum dolor
-                                    </p>
-                                    <div class="main-adopt-button">
-                                        <div class="adopt-button">
-                                            <a href="www">Adopt</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="column filterDiv fish">
-                            <div class="card-item ">
-                                <div class="animal-image">
-                                    <img src="~/assets/img/fish1.jpg" alt="animal image">
-                                </div>
-                                <div class="animal-context">
-                                    <p class="animal-name">Alina</p>
-                                    <p class="animal-message">
-                                        Hello my name is Barrot. I live in Ukrain. I lost my
-                                        house. Can u help me? lore m ipsum dolor
-                                    </p>
-                                    <div class="main-adopt-button">
-                                        <div class="adopt-button">
-                                            <a href="www">Adopt</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="column filterDiv parrot ">
-                            <div class="card-item ">
-                                <div class="animal-image">
-                                    <img src="~/assets/img/parrot2.jpg" alt="animal image">
-                                </div>
-                                <div class="animal-context">
-                                    <p class="animal-name">Narnia</p>
-                                    <p class="animal-message">
-                                        Hello my name is Barrot. I live in Ukrain. I lost my
-                                        house. Can u help me? lore m ipsum dolor
-                                    </p>
-                                    <div class="main-adopt-button">
-                                        <div class="adopt-button">
-                                            <a href="www">Adopt</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="column filterDiv parrot">
-                            <div class="card-item ">
-                                <div class="animal-image">
-                                    <img src="~/assets/img/PARROT1.jpg" alt="animal image">
-                                </div>
-                                <div class="animal-context">
-                                    <p class="animal-name">Barrot</p>
-                                    <p class="animal-message">
-                                        Hello my name is Barrot. I live in Ukrain. I lost my
-                                        house. Can u help me? lore m ipsum dolor
-                                    </p>
-                                    <div class="main-adopt-button">
-                                        <div class="adopt-button">
-                                            <a href="www">Adopt</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="column filterDiv dog">
-                            <div class="card-item ">
-                                <div class="animal-image">
-                                    <img src="~/assets/img/DOG-IMG.jpg" alt="animal image">
-                                </div>
-                                <div class="animal-context">
-                                    <p class="animal-name">Purple</p>
-                                    <p class="animal-message">
-                                        Hello my name is Barrot. I live in Ukrain. I lost my
-                                        house. Can u help me? lore m ipsum dolor
-                                    </p>
-                                    <div class="main-adopt-button">
-                                        <div class="adopt-button">
-                                            <a href="www">Adopt</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        }
 
 
                     </div>
@@ -214,10 +114,10 @@
     <!-- why animals section started -->
     <section id="why-animals">
         <div class="why-animals">
-            <h1>WHy Animals should be necessery for us?</h1>
+            <h1  data-aos="fade-down" data-aos-duration="1000">WHy Animals should be necessery for us?</h1>
             <div class="why-animals-inner animals-inner">
                 <div class="why-animals-inner-box">
-                    <div class="why-animals-inner-items">
+                    <div class="why-animals-inner-items" data-aos="fade-down" data-aos-duration="1000">
                         <p>
                             lorem ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                             Lorem Ipsum has been the industry's standard
@@ -240,15 +140,15 @@
                         </p>
                     </div>
 
-                    <div class="why-animals-inner-items">
+                    <div class="why-animals-inner-items" data-aos="fade-down" data-aos-duration="1000">
                         <img src="~/assets/img/awsome-cat-img.jpg" alt="">
                     </div>
                 </div>
-                <div class="why-animals-inner-box">
+                <div class="why-animals-inner-box" data-aos="fade-down" data-aos-duration="1000">
                     <div class="why-animals-inner-items">
                         <img src="~/assets/img/cat-with-glasses.jpg" alt="">
                     </div>
-                    <div class="why-animals-inner-items">
+                    <div class="why-animals-inner-items" data-aos="fade-down" data-aos-duration="1000">
                         <p>
                             lorem ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                             Lorem Ip dummy text ever since the 1500s, when an unknown printer took a galley of type
@@ -287,33 +187,18 @@
                 <div class="our-galerry-inner-main">
                     <h2>Our gallery</h2>
                 </div>
-                <div class="our-galery-images-main">
+                <div class="our-galery-images-main" data-aos="fade-down" data-aos-duration="1000">
 
                     <div class="our-galery-images our-gallery-row">
-                        <div>
-                            <img src="~/assets/img/baby-dog.jpg" alt="our galery photos">
-                        </div>
-                        <div>
-                            <img src="~/assets/img/CAT1.jpeg" alt="our galery photos">
-                        </div>
-                        <div>
-                            <img src="~/assets/img/kittens.jpg" alt="our galery photos">
-                        </div>
-                        <div>
-                            <img src="~/assets/img/baby-cat.jpg" alt="our galery photos">
-                        </div>
-                        <div>
-                            <img src="~/assets/img/whitecat.webp" alt="our galery photos">
-                        </div>
-                        <div>
-                            <img src="~/assets/img/cute-cat-and-dog-friends-1.jpg" alt="our galery photos">
-                        </div>
-                        <div>
-                            <img src="~/assets/img/baby-dog-yellow.jpg" alt="our galery photos">
-                        </div>
-                        <div>
-                            <img src="~/assets/img/newborn-babycat.jpg" alt="our galery photos">
-                        </div>
+
+                        @foreach (var item in Model.Galleries)
+                        {
+                            <div>
+                                <img src="~/assets/img/@item.Image" alt="our galery photos">
+                            </div>
+                        }
+                       
+
                     </div>
 
 

@@ -1,0 +1,77 @@
+﻿@using AnimaLove.ViewModels
+@model ShopViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!-- main started -->
+<main>
+    <section id="product">
+        <div class="product">
+            <div class="product-inner">
+                <div class="shop-for" data-aos="fade-down" data-aos-duration="1000">
+                    <p>Shop For your friend</p>
+                </div>
+                <div class="product-title" data-aos="fade-down" data-aos-duration="1000">
+                    <div class="categories">
+                        <p>CATEGORIES</p>
+                    </div>
+
+
+
+                </div>
+                <div class="categories" data-aos="fade-down" data-aos-duration="1000">
+                    <ul id="myBtnContainer">
+                        <li class="btn " onclick="filterSelection('all')">
+                            <p class="categories-item active-categories-item">All</p>
+                        </li>
+                        @foreach (var category in Model.Categories)
+                        {
+                            <li class="btn" onclick="filterSelection('@category.Name.ToLower()')">
+                                <p class="categories-item">@category.Name</p>
+                            </li>
+
+                        }
+
+                    </ul>
+                </div>
+                <div class="cards">
+
+                    <div class="cards-row container" >
+
+                        @foreach (var product in Model.Products)
+                        {<div class="column filterDiv @product.Category.Name.ToLower()" data-aos="fade-down" data-aos-duration="1000">
+                                <div class="card-item ">
+                                    <div class="product-image">
+                                        <img src="./assets/img/@product.Image" alt="product image">
+                                    </div>
+                                    <div class="product-context">
+                                        <p class="product-name">@product.Name</p>
+                                        <p class="product-description">
+                                            @product.Description
+                                        </p>
+                                        <p class="product-price">$@product.Price</p>
+                                        <div class="main-add-basket">
+                                            <div class="add-basket">
+                                                <p>Add Basket</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        }
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="main-add-basket load-more-main">
+                <div class=" load-more">
+                    <a href="www">Show More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<!-- main ended -->

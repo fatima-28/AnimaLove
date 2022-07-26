@@ -10,5 +10,8 @@ namespace AnimaLove.ViewModels
     {
         public List<Slide> Slides { get; set; }
         public List<SlideSummary> SlideSummaries { get; set; }
+        public List<Category> Categories { get; set; }
+        public List<Pet> Pets { get; set; }
+        public List<Gallery> Galleries { get; set; }
     }
 }
