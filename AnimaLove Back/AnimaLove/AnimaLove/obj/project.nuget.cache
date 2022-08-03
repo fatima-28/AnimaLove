@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "w4fbbm+rgkO3U9JORQdKWov5XVqJAJ5badL57v3nApkhwb07SBUoMADBA6OU/hJT5uYessoWIWlL6bOVpKs+ZA==",
+  "dgSpecHash": "i1lCn6/ljXHvGpbRE6vGkSL17giApIYVzsAs11W4BWOIIHcmyMDf0nVcgKdQwP7aFBU8JNKNcymXmqXXSb3GDQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\mac\\Desktop\\AnimaLove\\AnimaLove Back\\AnimaLove\\AnimaLove\\AnimaLove.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\mac\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.27\\microsoft.aspnetcore.cryptography.internal.3.1.27.nupkg.sha512",
+    "C:\\Users\\mac\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.27\\microsoft.aspnetcore.cryptography.keyderivation.3.1.27.nupkg.sha512",
     "C:\\Users\\mac\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\mac\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\3.1.27\\microsoft.aspnetcore.identity.entityframeworkcore.3.1.27.nupkg.sha512",
     "C:\\Users\\mac\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
     "C:\\Users\\mac\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\3.1.0\\microsoft.aspnetcore.razor.language.3.1.0.nupkg.sha512",
     "C:\\Users\\mac\\.nuget\\packages\\microsoft.aspnetcore.razor.runtime\\2.2.0\\microsoft.aspnetcore.razor.runtime.2.2.0.nupkg.sha512",
@@ -32,6 +35,8 @@
     "C:\\Users\\mac\\.nuget\\packages\\microsoft.extensions.configuration.binder\\3.1.27\\microsoft.extensions.configuration.binder.3.1.27.nupkg.sha512",
     "C:\\Users\\mac\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\3.1.27\\microsoft.extensions.dependencyinjection.3.1.27.nupkg.sha512",
     "C:\\Users\\mac\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.1.27\\microsoft.extensions.dependencyinjection.abstractions.3.1.27.nupkg.sha512",
+    "C:\\Users\\mac\\.nuget\\packages\\microsoft.extensions.identity.core\\3.1.27\\microsoft.extensions.identity.core.3.1.27.nupkg.sha512",
+    "C:\\Users\\mac\\.nuget\\packages\\microsoft.extensions.identity.stores\\3.1.27\\microsoft.extensions.identity.stores.3.1.27.nupkg.sha512",
     "C:\\Users\\mac\\.nuget\\packages\\microsoft.extensions.logging\\3.1.27\\microsoft.extensions.logging.3.1.27.nupkg.sha512",
     "C:\\Users\\mac\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.1.27\\microsoft.extensions.logging.abstractions.3.1.27.nupkg.sha512",
     "C:\\Users\\mac\\.nuget\\packages\\microsoft.extensions.options\\3.1.27\\microsoft.extensions.options.3.1.27.nupkg.sha512",

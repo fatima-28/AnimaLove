@@ -50,7 +50,7 @@
                         <div class="dropdown-orginal-main">
                             <div class="dropdown-main">
                                 <div class="dropdown-inner-item">
-                                    <div> <a href="./shop.html">All</a> </div>
+
                                     <div> <a href="./dropdown-special-pages.html">Cat Products</a> </div>
                                     <div> <a href="./dropdown-special-pages.html">Dog Products</a> </div>
                                     <div> <a href="./dropdown-special-pages.html">Parrot Products</a> </div>
@@ -59,11 +59,22 @@
                             </div>
                         </div>
                     </li>
-                    <li><a href="#" class="pages-item">Posts</a></li>
+                    <li><a class="pages-item" asp-controller="Post" asp-action="Index">Posts</a></li>
                     <li><a href="#" class="pages-item">About</a></li>
-                    <li><a href="#" class="pages-item">Profile</a> </li>
-                    <li><img class="profile-img" src="~/assets/img/icon-img.png" alt="photo"></li>
 
+                  
+
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li><a  class="pages-item text-primary" style="text-transform:lowercase;">@User.Identity.Name</a> </li>
+
+                    }
+                    else
+                    {
+                        <li><a asp-controller="Account" asp-action="Register" class="pages-item text-primary">Sign In</a> </li>
+                    }
+                    <li><a href="#" class="pages-item" style="display:none;">Profile</a> </li>
+                        
                 </ul>
             </div>
 
@@ -75,6 +86,7 @@
                     <a href="./posts.html" class="hamburger-menu-items">Posts</a>
                     <a href="./about.html" class="hamburger-menu-items">About</a>
                     <a href="./profile.html" class="hamburger-menu-items">Profile</a>
+                   
 
                 </div>
             </div>
