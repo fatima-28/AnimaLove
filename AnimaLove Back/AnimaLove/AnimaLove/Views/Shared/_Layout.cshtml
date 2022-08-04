@@ -66,7 +66,7 @@
 
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <li><a  class="pages-item text-primary" style="text-transform:lowercase;">@User.Identity.Name</a> </li>
+                        <li><a  class="pages-item text-primary" style="text-transform:lowercase;" asp-controller="Profile" asp-action="Index">@User.Identity.Name</a> </li>
 
                     }
                     else
