@@ -62,6 +62,40 @@ namespace AnimaLove.Controllers
         {
             return View();
         }
+        [HttpPost]
+        [AllowAnonymous]
+        public async Task<IActionResult> Login(LoginViewModel model)
+        {
+           AppUser DbUser= await _userManager.FindByEmailAsync(model.Email);
+            if (DbUser==null)
+            {
+                ModelState.AddModelError("", "Email or password is wrong!");
+                return View(model);
+            }
+            AppUser newModel = new AppUser {
+                Email = model.Email
+            };
+            var signInResult =
+                 await _signInManager.PasswordSignInAsync(DbUser.UserName, model.Password, model.isPersistent,lockoutOnFailure: true);
+            if (signInResult.IsLockedOut)
+            {
+                ModelState.AddModelError("", "Prease try again later!");
+                return View(model);
+            }
+            if (!signInResult.Succeeded)
+            {
+                ModelState.AddModelError("", "Email or password is wrong!");
+                return View(model);
+
+            }
+            return RedirectToAction("Index", "Home");
+        }
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+
+            return RedirectToAction("Login");
+        }
 
     }
 }
