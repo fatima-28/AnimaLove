@@ -1,4 +1,5 @@
-﻿using AnimaLove.Models;
+﻿using AnimaLove.Helpers;
+using AnimaLove.Models;
 using AnimaLove.ViewModels.Accounts;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -14,12 +15,16 @@ namespace AnimaLove.Controllers
     {
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
+        
 
         public AccountController(UserManager<AppUser> userManager,
-                                      SignInManager<AppUser> signInManager)
+                                      SignInManager<AppUser> signInManager,
+                                      RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _roleManager = roleManager;
         }
 
 
@@ -52,6 +57,7 @@ namespace AnimaLove.Controllers
                 }
                 return View(model);
             }
+            await _userManager.AddToRoleAsync(NewUser, Role.RoleType.Member.ToString());
            await _signInManager.SignInAsync(NewUser, true);
             return RedirectToAction("Index","Home");
 
@@ -96,6 +102,19 @@ namespace AnimaLove.Controllers
 
             return RedirectToAction("Login");
         }
+        //public async Task CreateRole()
+        //{
+        //    foreach (var role in Enum.GetValues(typeof(Role.RoleType)))
+        //    {
+
+        //        if (!await _roleManager.RoleExistsAsync(role.ToString()))
+        //        {
+        //            await _roleManager.CreateAsync(new IdentityRole { Name = role.ToString() });
+        //        }
+              
+        //    }
+            
+        //}
 
     }
 }

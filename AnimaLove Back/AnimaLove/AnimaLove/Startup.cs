@@ -51,7 +51,13 @@ namespace AnimaLove
 
             services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
             services.AddControllersWithViews();
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.LoginPath = "/Account/Login";
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -63,10 +69,15 @@ namespace AnimaLove
             }
             app.UseStaticFiles();
             app.UseRouting();
+
             app.UseAuthentication();
             app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(
+                    name: "areas",
+            pattern: "{area:exists}/{controller=Dashboard}/{action=Index}/{id?}"
+                    );
                 endpoints.MapControllerRoute(
                          name: "default",
              pattern: "{controller=Home}/{action=Index}/{id?}");

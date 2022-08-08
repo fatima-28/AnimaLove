@@ -1,5 +1,6 @@
 ﻿using AnimaLove.DAL;
 using AnimaLove.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace AnimaLove.Controllers
 {
+    [Authorize]
     public class ShopController : Controller
     {
         private AppDbContext _context { get; }
