@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AnimaLove.DAL;
+using AnimaLove.ViewModels;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +10,11 @@ namespace AnimaLove.Controllers
 {
     public class ProfileController : Controller
     {
+        private AppDbContext _context { get; }
+        public ProfileController(AppDbContext context)
+        {
+            _context = context;
+        }
         public IActionResult Index()
         {
             return View();

@@ -1,4 +1,6 @@
-﻿@{
+﻿
+@model AnimaLove.ViewModels.ProfileViewModel
+@{
     Layout = null;
 }
 <!DOCTYPE html>
@@ -41,9 +43,16 @@
                 <div class="profile-inner">
                     <div class="user-info">
                         <div class="user-info-items">
-                            <img src="./assets/img/photo-1494790108377-be9c29b29330.jpg" alt="user">
-                            <p class="user-fullname">Aria Collabator</p>
-                            <p class="user-nickname">animallover28</p>
+
+
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <img src="./assets/img/images-pp.jpg" alt="user">
+                                <p class="user-fullname">Aysu</p>
+                                <p class="user-nickname">@User.Identity.Name</p>
+                            }
+
+
                             <div class="follow-info">
                                 <a href="./followers.html">Followers</a>
                                 <a href="./following.html">Followings</a>

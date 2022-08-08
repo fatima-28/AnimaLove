@@ -22,5 +22,6 @@ namespace AnimaLove.ViewModels.Accounts
         [DataType(DataType.Password)]
         [Compare("Password", ErrorMessage = "Passwords does not matching.")]
         public string ConfirmPassword { get; set; }
+       
     }
 }
