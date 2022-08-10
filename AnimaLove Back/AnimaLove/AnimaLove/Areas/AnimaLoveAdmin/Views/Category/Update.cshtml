@@ -1,0 +1,27 @@
+﻿@using AnimaLove.Models
+@model Category
+@{
+    ViewData["Title"] = "Update";
+}
+
+<div class="row">
+    <div class="col-md-6 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">EDIT CATEGORY</h4>
+
+                <form class="forms-sample" method="post">
+                    <div class="form-group">
+                        <label asp-for="Name">CATEGORY NAME</label>
+                        <input class="form-control" asp-for="Name" placeholder="CATEGORY NAME">
+
+                        <span class="text-danger" asp-validation-for="Name"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-warning me-2">UPDATE</button>
+                    <a class="btn btn-light" asp-action="Index">CANCEL</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
