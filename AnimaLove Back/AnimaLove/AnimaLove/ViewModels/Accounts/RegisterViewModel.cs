@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -22,6 +23,8 @@ namespace AnimaLove.ViewModels.Accounts
         [DataType(DataType.Password)]
         [Compare("Password", ErrorMessage = "Passwords does not matching.")]
         public string ConfirmPassword { get; set; }
-       
+        [Column(TypeName = "UserImage")]
+        public byte[] UserImage { get; set; }
+
     }
 }

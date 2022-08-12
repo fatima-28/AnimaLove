@@ -48,7 +48,7 @@ namespace AnimaLove.Controllers
                 FullName =model.FullName,
             };
             var IdentityResult =  await _userManager.CreateAsync(NewUser, model.Password);
-
+            
             if (!IdentityResult.Succeeded)
             {
                 foreach (var error in IdentityResult.Errors)

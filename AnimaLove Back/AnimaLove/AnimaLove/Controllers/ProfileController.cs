@@ -20,6 +20,8 @@ namespace AnimaLove.Controllers
         public IActionResult Index()
         {
             return View();
+            
+           
         }
     }
 }

@@ -16,8 +16,8 @@ namespace AnimaLove.Models
         public string ProfileImage { get; set; }
         public Post Posts { get; set; }
         public bool IsActivated { get; set; }
-       
 
+      
 
     }
 }
