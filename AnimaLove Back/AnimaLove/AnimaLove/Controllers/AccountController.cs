@@ -42,7 +42,7 @@ namespace AnimaLove.Controllers
             }
             AppUser NewUser = new AppUser
             {
-               
+               Description=model.Description,
                 Email = model.Email,
                 UserName = model.UserName,
                 FullName =model.FullName,
