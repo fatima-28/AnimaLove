@@ -12,35 +12,14 @@
                 <div class="shop-for" data-aos="fade-down" data-aos-duration="1000">
                     <p>Shop For your friend</p>
                 </div>
-                <div class="product-title" data-aos="fade-down" data-aos-duration="1000">
-                    <div class="categories">
-                        <p>CATEGORIES</p>
-                    </div>
-
-
-
-                </div>
-                <div class="categories" data-aos="fade-down" data-aos-duration="1000">
-                    <ul id="myBtnContainer">
-                        <li class="btn " onclick="filterSelection('all')">
-                            <p class="categories-item active-categories-item">All</p>
-                        </li>
-                        @foreach (var category in Model.Categories)
-                        {
-                            <li class="btn" onclick="filterSelection('@category.Name.ToLower()')">
-                                <p class="categories-item">@category.Name</p>
-                            </li>
-
-                        }
-
-                    </ul>
-                </div>
+               
+                
                 <div class="cards">
 
                     <div class="cards-row container" >
 
                         @foreach (var product in Model.Products)
-                        {<div class="column filterDiv @product.Category.Name.ToLower()" data-aos="fade-down" data-aos-duration="1000">
+                        {<div class="column"data-aos="fade-down" data-aos-duration="1000">
                                 <div class="card-item ">
                                     <div class="product-image">
                                         <img src="./assets/img/@product.Image" alt="product image">

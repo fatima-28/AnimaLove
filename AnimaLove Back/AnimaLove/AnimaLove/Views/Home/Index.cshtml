@@ -43,24 +43,9 @@
         <div class="adoption">
             <div class="adoption-inner">
                 <div class="adoption-title" data-aos="fade-down" data-aos-duration="1000">
-                    <p>Adopt Pet</p>
+                    <p style="font-size:70px; font-weight:700;">Adopt Pet</p>
                 </div>
-                <div class="categories"  data-aos="fade-down" data-aos-duration="1000">
-                    <ul id="myFirstBtnContainer">
-                        <li class="btn active" onclick="filterSelection('all')">
-                            <p class="categories-item ">All</p>
-                        </li>
-
-
-                        @foreach (var category in Model.Categories)
-                        {
-                            <li class="btn" onclick="filterSelection('@category.Name.ToLower()')">
-                                <p class="categories-item">@category.Name</p>
-                            </li>
-                           
-                        }
-                    </ul>
-                </div>
+               
                 <div class="cards">
 
                     <div class="cards-row container"  >
@@ -68,7 +53,7 @@
 
                         @foreach (var pet in Model.Pets)
                         {
-                            <div class="column filterDiv @pet.Category.Name.ToLower();" data-aos="fade-down" data-aos-duration="2000">
+                            <div class="column" data-aos="fade-down" data-aos-duration="2000">
                                 <div class="card-item ">
                                     <div class="animal-image">
                                         <img src="~/assets/img/@pet.Image" alt="animal image">

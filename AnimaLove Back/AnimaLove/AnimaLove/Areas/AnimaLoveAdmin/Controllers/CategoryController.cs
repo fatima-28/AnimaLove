@@ -1,6 +1,7 @@
 ﻿using AnimaLove.DAL;
 using AnimaLove.Models;
 using AnimaLove.ViewModels.CategoryViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace AnimaLove.Areas.AnimaLoveAdmin.Controllers
-{
+{ [Authorize]
     [Area("AnimaLoveAdmin")]
     public class CategoryController : Controller
     {

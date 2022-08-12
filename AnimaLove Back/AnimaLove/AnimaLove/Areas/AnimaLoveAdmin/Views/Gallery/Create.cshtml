@@ -1,0 +1,25 @@
+﻿@using AnimaLove.ViewModels.GalleryViewModels
+@model CreateGalleryVM
+@{
+    ViewData["Title"] = "Create";
+}
+<div class="row">
+    <div class="col-md-6 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">CREATE NEW GALLERY ITEM</h4>
+
+                <form class="forms-sample" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label asp-for="Photo">Image</label>
+                        <input class="form-control" asp-for="Photo">
+                        <span class="text-danger" asp-validation-for="Photo"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary me-2">CREATE</button>
+                    <a class="btn btn-light" asp-action="Index">CANCEL</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

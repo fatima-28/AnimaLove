@@ -1,0 +1,24 @@
+﻿@using AnimaLove.Models
+@model Slide
+@{
+    ViewData["Title"] = "Update";
+}
+
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Update</h4>
+
+            <form class="forms-sample" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label asp-for="Photo">Image</label>
+                    <input class="form-control" asp-for="Photo">
+                    <span class="text-danger" asp-validation-for="Photo"></span>
+                </div>
+               
+                <button type="submit" class="btn btn-warning me-2">Update</button>
+                <button class="btn btn-light" asp-action="Index">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>
