@@ -23,8 +23,8 @@ namespace AnimaLove.ViewModels.Accounts
         [DataType(DataType.Password)]
         [Compare("Password", ErrorMessage = "Passwords does not matching.")]
         public string ConfirmPassword { get; set; }
-        [Column(TypeName = "UserImage")]
-        public byte[] UserImage { get; set; }
+      
+       
 
     }
 }

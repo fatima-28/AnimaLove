@@ -1,7 +1,8 @@
 ﻿
-@model AnimaLove.ViewModels.ProfileViewModel
+@model AnimaLove.Models.AppUser
 @{
     Layout = null;
+  
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -45,11 +46,11 @@
                         <div class="user-info-items">
 
 
-                           
-                                <img src="./assets/img/images-pp.jpg" alt="user">
-                                <p class="user-fullname">Fatima Bayramova</p>
-                                <p class="user-nickname">@User.Identity.Name</p>
-                       
+
+                            <img src="./assets/img/images-pp.jpg" alt="user">
+                            <p class="user-fullname">@Html.DisplayFor(model => model.FullName)</p>
+                            <p class="user-nickname">@User.Identity.Name</p>
+
 
 
                             <div class="follow-info">
@@ -119,12 +120,12 @@
                         <div class="logo-and-settings logo-item">
                             <img src="./assets/img/logo.png" alt="logo">
 
-                       
 
 
-                </div>
 
-            </div>
+                        </div>
+
+                    </div>
         </section>
         <section id="myposts">
             <div class="myposts">

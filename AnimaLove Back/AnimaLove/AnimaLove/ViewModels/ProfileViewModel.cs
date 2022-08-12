@@ -9,5 +9,6 @@ namespace AnimaLove.ViewModels
     public class ProfileViewModel
     {
         public List<AppUser> Profiles { get; set; }
+       
     }
 }
