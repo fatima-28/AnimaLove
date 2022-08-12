@@ -73,11 +73,7 @@ namespace AnimaLove.Areas.AnimaLoveAdmin.Controllers
                     ModelState.AddModelError("Description", "Description must be at least 10 character");
                     return View();
                 }
-                if (model.category == null)
-                {
-                    ModelState.AddModelError("category", "category field is required");
-                    return View();
-                }
+             
 
 
                 Pet pet = new Pet
@@ -85,7 +81,7 @@ namespace AnimaLove.Areas.AnimaLoveAdmin.Controllers
                     Name = model.Name,
                     Description = model.Description,
                     Image = uniqueFileName,
-                    Category=model.category
+                    
                     
                 };
                 _context.Add(pet);

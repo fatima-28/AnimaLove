@@ -45,28 +45,17 @@
                     <li class="list">
                         <a class=" pages-item " asp-controller="Home" asp-action="Index">Home</a>
                     </li>
-                    <li class="shop-pages-item-list">
-                        <a class="pages-item shop-pages-item" href="#">Shop</a>
-                        <div class="dropdown-orginal-main">
-                            <div class="dropdown-main">
-                                <div class="dropdown-inner-item">
-
-                                    <div> <a  asp-controller="CatProducts" asp-action="Index">Cat Products</a> </div>
-                                    <div> <a asp-controller="DogProducts" asp-action="Index">Dog Products</a> </div>
-                                    <div> <a asp-controller="ParrotProducts" asp-action="Index">Parrot Products</a> </div>
-                                    <div> <a asp-controller="FishProducts" asp-action="Index">Fish Products</a> </div>
-                                </div>
-                            </div>
-                        </div>
+                    <li class="list">
+                        <a class=" pages-item " href="#adoption">Adoption</a>
                     </li>
                     <li><a class="pages-item" asp-controller="Post" asp-action="Index">Posts</a></li>
                     <li><a asp-controller="AboutUs" asp-action="Index" class="pages-item">About</a></li>
 
-                  
+
 
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <li><a  class="pages-item text-primary" style="text-transform:lowercase;" asp-controller="Profile" asp-action="Index">@User.Identity.Name</a> </li>
+                        <li><a class="pages-item text-primary" style="text-transform:lowercase;" asp-controller="Profile" asp-action="Index">@User.Identity.Name</a> </li>
 
                     }
                     else
@@ -74,7 +63,7 @@
                         <li><a asp-controller="Account" asp-action="Register" class="pages-item text-primary">Sign In</a> </li>
                     }
                     <li><a href="#" class="pages-item" style="display:none;">Profile</a> </li>
-                        
+
                 </ul>
             </div>
 
@@ -82,7 +71,7 @@
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                 <div class="overlay-content">
                     <a asp-controller="Home" asp-action="Index" class="hamburger-menu-items ">Home</a>
-                    <a asp-controller="Shop" asp-action="Index" class="hamburger-menu-items">Shop</a>
+                    <a href="#adoption" class="hamburger-menu-items">Adoption</a>
                     <a asp-controller="Post" asp-action="Index" class="hamburger-menu-items">Posts</a>
                     <a asp-controller="AboutUs" asp-action="Index" class="hamburger-menu-items">About</a>
                     <a asp-controller="Profile" asp-action="Index" class="hamburger-menu-items">Profile</a>
@@ -91,16 +80,16 @@
                 </div>
             </div>
             <div class="hamburger" onclick="openNav()"><i class="fa-solid fa-bars  hamburger"></i></div>
-            <div class="basket">
+            <!--<div class="basket">
                 <i class="fa-solid fa-basket-shopping basket-item" onclick="OpenBasket();"></i>
                 <div class="basket-box">
                     <div class="basket-box-inner">
                         <div class="x-element" onclick="CloseBasket();">
                             <i class="fa-solid fa-xmark"></i>
-                        </div>
+                        </div>-->
                         <!-- <p class="empty-basket">Basket Empty</p> -->
 
-                        <div class="basket-box-inside">
+                        <!--<div class="basket-box-inside">
                             <div class="basket-box-inside-inner">
                                 <div class="basket-img">
                                     <img src="~/assets/img/parrot-food-2.jpeg" alt="Product">
@@ -166,7 +155,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>-->
         </div>
     </header>
     <!-- header ended -->
