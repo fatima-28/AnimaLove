@@ -1,0 +1,51 @@
+﻿@using AnimaLove.ViewModels.UserViewModels
+@model CreateUserViewModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Create New User</h4>
+
+            <form class="forms-sample" method="post" enctype="multipart/form-data">
+            
+                <div class="form-group">
+                    <label asp-for="FullName">Full Name</label>
+                    <input class="form-control" asp-for="FullName" placeholder="FullName">
+                    <span class="text-danger" asp-validation-for="FullName"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email">Email</label>
+                    <input class="form-control" asp-for="Email" placeholder="Email">
+                    <span class="text-danger" asp-validation-for="Email"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="UserName">UserName</label>
+                    <input class="form-control" asp-for="UserName" placeholder="UserName">
+                    <span class="text-danger" asp-validation-for="UserName"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Description">Description</label>
+                    <input class="form-control" asp-for="Description" placeholder="Description">
+                    <span class="text-danger" asp-validation-for="Description"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Password">Password</label>
+                    <input class="form-control" asp-for="Password" placeholder="Password">
+                    <span class="text-danger" asp-validation-for="Password"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ConfirmPassword">Repeat Password</label>
+                    <input class="form-control" asp-for="ConfirmPassword" placeholder="Repeat password">
+                    <span class="text-danger" asp-validation-for="ConfirmPassword"></span>
+                </div>
+
+                <button type="submit" class="btn btn-success me-2">Create</button>
+                <button class="btn btn-light" asp-action="Index">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>
