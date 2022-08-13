@@ -19,6 +19,8 @@ namespace AnimaLove.Models
         public bool IsActivated { get; set; }
         [NotMapped,Required]
         public IFormFile ProfilePhoto { get; set; }
+        public ICollection<FollowerUser> FollowerUser { get; set; }
+        public ICollection<FollowingUser> FollowingUser { get; set; }
 
 
 

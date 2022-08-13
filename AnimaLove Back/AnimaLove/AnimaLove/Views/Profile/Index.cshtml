@@ -54,8 +54,8 @@
 
 
                             <div class="follow-info">
-                                <a href="./followers.html">Followers</a>
-                                <a href="./following.html">Followings</a>
+                                <a asp-controller="Follower" asp-action="Index">Followers</a>
+                                <a asp-controller="Following" asp-action="Index">Followings</a>
                             </div>
                             <div class="edit">
                                 <a asp-action="Edit" asp-route-id="@Model.Id">Edit Profile</a>

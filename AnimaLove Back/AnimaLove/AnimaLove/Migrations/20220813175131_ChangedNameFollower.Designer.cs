@@ -4,14 +4,16 @@ using AnimaLove.DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AnimaLove.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220813175131_ChangedNameFollower")]
+    partial class ChangedNameFollower
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -445,7 +447,7 @@ namespace AnimaLove.Migrations
             modelBuilder.Entity("AnimaLove.Models.FollowingUser", b =>
                 {
                     b.HasOne("AnimaLove.Models.AppUser", null)
-                        .WithMany("FollowingUsers")
+                        .WithMany("FollowingUser")
                         .HasForeignKey("AppUserId");
                 });
 
