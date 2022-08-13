@@ -47,8 +47,8 @@
 
 
 
-                            <img src="./assets/img/images-pp.jpg" alt="user">
-                            <p class="user-fullname">@Html.DisplayFor(model => model.FullName)</p>
+                            <img src="./assets/img/@Model.ProfileImage" alt="user">
+                            <p class="user-fullname">@Model.FullName</p>
                             <p class="user-nickname">@User.Identity.Name</p>
 
 
@@ -58,7 +58,7 @@
                                 <a href="./following.html">Followings</a>
                             </div>
                             <div class="edit">
-                                <a href="">Edit Profile</a>
+                                <a asp-action="Edit" asp-route-id="@Model.Id">Edit Profile</a>
                             </div>
 
                         </div>
@@ -69,7 +69,7 @@
                                     <div>
                                         <p class="user-desc">
                                             <b>User Description</b>
-                                            @Html.DisplayFor(model => model.Description)
+                                            @Model.Description
                                         </p>
                                     </div>
                                 </div>
@@ -85,9 +85,9 @@
                         <div class="settings-list">
                             <ul>
                                 <li><a asp-controller="Home" asp-action="Index">home</a></li>
-                                <li><a asp-controller="Shop" asp-action="Index">shop</a></li>
+                               
                                 <li><a asp-controller="Post" asp-action="Index">posts</a></li>
-                                <li><a href="./about.html">about</a></li>
+                                <li><a asp-controller="AboutUs" asp-action="Index">about</a></li>
                                 <li class="sign-out"><a asp-controller="Account" asp-action="Logout">Sign Out</a></li>
 
                             </ul>

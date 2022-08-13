@@ -1,0 +1,36 @@
+﻿@using AnimaLove.Models
+@model AppUser
+
+@{
+    ViewData["Title"] = "Update";
+}
+
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Update</h4>
+
+            <form class="forms-sample" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label asp-for="ProfilePhoto">Profile Image</label>
+                    <input class="form-control" asp-for="ProfilePhoto">
+                    <span class="text-danger" asp-validation-for="ProfilePhoto"></span>
+                </div>
+             
+                <div class="form-group">
+                    <label asp-for="Description">Description</label>
+                    <input class="form-control" asp-for="Description" placeholder="Description">
+                    <span class="text-danger" asp-validation-for="Description"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="FullName">Full Name</label>
+                    <input class="form-control" asp-for="FullName" placeholder="Full Name">
+                    <span class="text-danger" asp-validation-for="FullName"></span>
+                </div>
+
+                <button type="submit" class="btn btn-warning me-2">Edit</button>
+                <button class="btn btn-light" asp-action="Index">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>

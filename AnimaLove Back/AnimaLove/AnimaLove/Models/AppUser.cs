@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,8 +17,11 @@ namespace AnimaLove.Models
         public string ProfileImage { get; set; }
         public Post Posts { get; set; }
         public bool IsActivated { get; set; }
+        [NotMapped,Required]
+        public IFormFile ProfilePhoto { get; set; }
 
-      
+
+
 
     }
 }

@@ -40,6 +40,7 @@ namespace AnimaLove.Controllers
             {
                 return View(model);
             }
+
             AppUser NewUser = new AppUser
             {
                Description=model.Description,
