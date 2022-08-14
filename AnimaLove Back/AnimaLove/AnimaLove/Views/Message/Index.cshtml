@@ -28,9 +28,9 @@
           rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Acme&family=Amatic+SC:wght@700&family=Josefin+Sans:ital,wght@0,400;1,700&display=swap"
           rel="stylesheet">
-    <link rel="icon" href="./assets/img/icon-img.png">
-    <link rel="stylesheet" href="./assets/css/main.css">
-    <link rel="stylesheet" href="./assets/css/messages.css">
+    <link rel="icon" href="~/assets/img/icon-img.png">
+    <link rel="stylesheet" href="~/assets/css/main.css">
+    <link rel="stylesheet" href="~/assets/css/messages.css">
     <title>AnimaLove</title>
 </head>
 
@@ -47,40 +47,20 @@
                         <div class="px-4 d-none d-md-block">
                             <div class="d-flex align-items-center">
                                 <div class="flex-grow-1">
-                                    <input type="text" class="form-control my-3" placeholder="Search...">
+                                    <input type="text" class="form-control my-3" placeholder="Search..."
+                                           id="input-search">
                                 </div>
                             </div>
                         </div>
 
-                        <a href="#" class="list-group-item list-group-item-action border-0">
-                            <div class="badge bg-success float-right">5</div>
-                            <div class="d-flex align-items-start">
-                                <img src="https://bootdey.com/img/Content/avatar/avatar5.png"
-                                     class="rounded-circle mr-1" alt="Vanessa Tucker" width="40" height="40">
-                                <div class="flex-grow-1 ml-3">
-                                    Vanessa Tucker
-                                    <div class="small"><span class="fas fa-circle chat-online"></span> Online</div>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action border-0">
-                            <div class="badge bg-success float-right">2</div>
-                            <div class="d-flex align-items-start">
-                                <img src="https://bootdey.com/img/Content/avatar/avatar2.png"
-                                     class="rounded-circle mr-1" alt="William Harris" width="40" height="40">
-                                <div class="flex-grow-1 ml-3">
-                                    William Harris
-                                    <div class="small"><span class="fas fa-circle chat-online"></span> Online</div>
-                                </div>
-                            </div>
-                        </a>
+
                         <a href="#" class="list-group-item list-group-item-action border-0">
                             <div class="d-flex align-items-start">
                                 <img src="https://bootdey.com/img/Content/avatar/avatar3.png"
                                      class="rounded-circle mr-1" alt="Sharon Lessman" width="40" height="40">
                                 <div class="flex-grow-1 ml-3">
-                                    Sharon Lessman
-                                    <div class="small"><span class="fas fa-circle chat-online"></span> Online</div>
+                                    <p class="contact-name">SHaron Tusker</p>
+
                                 </div>
                             </div>
                         </a>
@@ -89,8 +69,8 @@
                                 <img src="https://bootdey.com/img/Content/avatar/avatar4.png"
                                      class="rounded-circle mr-1" alt="Christina Mason" width="40" height="40">
                                 <div class="flex-grow-1 ml-3">
-                                    Christina Mason
-                                    <div class="small"><span class="fas fa-circle chat-offline"></span> Offline</div>
+                                    <p class="contact-name"> VCrista Tusker</p>
+
                                 </div>
                             </div>
                         </a>
@@ -99,8 +79,8 @@
                                 <img src="https://bootdey.com/img/Content/avatar/avatar5.png"
                                      class="rounded-circle mr-1" alt="Fiona Green" width="40" height="40">
                                 <div class="flex-grow-1 ml-3">
-                                    Fiona Green
-                                    <div class="small"><span class="fas fa-circle chat-offline"></span> Offline</div>
+                                    <p class="contact-name"> Fionasa Tusker</p>
+
                                 </div>
                             </div>
                         </a>
@@ -109,8 +89,8 @@
                                 <img src="https://bootdey.com/img/Content/avatar/avatar2.png"
                                      class="rounded-circle mr-1" alt="Doris Wilder" width="40" height="40">
                                 <div class="flex-grow-1 ml-3">
-                                    Doris Wilder
-                                    <div class="small"><span class="fas fa-circle chat-offline"></span> Offline</div>
+                                    <p class="contact-name"> Lalina Tusker</p>
+
                                 </div>
                             </div>
                         </a>
@@ -119,8 +99,8 @@
                                 <img src="https://bootdey.com/img/Content/avatar/avatar4.png"
                                      class="rounded-circle mr-1" alt="Haley Kennedy" width="40" height="40">
                                 <div class="flex-grow-1 ml-3">
-                                    Haley Kennedy
-                                    <div class="small"><span class="fas fa-circle chat-offline"></span> Offline</div>
+                                    <p class="contact-name"> Lalina Tusker</p>
+
                                 </div>
                             </div>
                         </a>
@@ -129,8 +109,8 @@
                                 <img src="https://bootdey.com/img/Content/avatar/avatar3.png"
                                      class="rounded-circle mr-1" alt="Jennifer Chang" width="40" height="40">
                                 <div class="flex-grow-1 ml-3">
-                                    Jennifer Chang
-                                    <div class="small"><span class="fas fa-circle chat-offline"></span> Offline</div>
+                                    <p class="contact-name"> Jennifer Tusker</p>
+
                                 </div>
                             </div>
                         </a>
@@ -333,11 +313,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
             integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="./assets/js/sending-message.js"></script>
+    <script src="~/assets/js/sending-message.js"></script>
 
-    <script src="./assets/js/hamburger-bars.js"></script>
-    <script src="./assets/js/main.js"></script>
-    <script src="./assets/js/slider.js"></script>
+    <script src="~/assets/js/hamburger-bars.js"></script>
+    <script src="~/assets/js/main.js"></script>
+    <script src="~/assets/js/slider.js"></script>
+    <script src="~/assets/js/messagesearch.js"></script>
 </body>
 
 </html>
