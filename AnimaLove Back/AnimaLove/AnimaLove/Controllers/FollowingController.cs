@@ -18,6 +18,8 @@ namespace AnimaLove.Controllers
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
         private AppDbContext _context { get; }
+
+        public IEnumerable<AppUser> users;
         public FollowingController(AppDbContext context, UserManager<AppUser> userManager,
                                       SignInManager<AppUser> signInManager, IWebHostEnvironment env)
         {
@@ -25,10 +27,11 @@ namespace AnimaLove.Controllers
             _userManager = userManager;
             _signInManager = signInManager;
             _env = env;
+            users = _context.Users.Where(p => !p.IsActivated).ToList();
         }
         public IActionResult Index()
         {
-            return View();
+            return View(users);
         }
     }
 }
