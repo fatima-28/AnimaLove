@@ -85,9 +85,10 @@
                         <div class="settings-list">
                             <ul>
                                 <li><a asp-controller="Home" asp-action="Index">home</a></li>
-                               
+
                                 <li><a asp-controller="Post" asp-action="Index">posts</a></li>
                                 <li><a asp-controller="AboutUs" asp-action="Index">about</a></li>
+                                <li><a asp-controller="Message" asp-action="Index">Messages</a></li>
                                 <li class="sign-out"><a asp-controller="Account" asp-action="Logout">Sign Out</a></li>
 
                             </ul>
@@ -116,7 +117,7 @@
                                 <i class="fa-solid fa-plus"></i>
                             </div>
                         </a>
-                        <a href="www" class="post-link">
+                        <a asp-controller="FullPostInfo"  asp-action="Index" class="post-link">
                             <div class="single-post-items">
                                 <img src="./assets/img/awsome-cat-img.jpg" alt="photo">
                             </div>

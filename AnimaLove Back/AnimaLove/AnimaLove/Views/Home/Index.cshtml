@@ -48,8 +48,15 @@
                
                 <div class="cards">
 
-                    <div class="cards-row container"  >
+                    <div class="cards-row container">
 
+                        <a href="#">
+                            <div class="column" data-aos="fade-down" data-aos-duration="2000">
+                                <div class="card-item " style="border: 3px solid #3e97a3; display:flex; justify-content:center; align-items:center;">
+                                    <p style="color: #3e97a3; font-size:30px; font-weight:700;">ADD NEW ONE</p>
+                                </div>
+                            </div>
+                        </a>
 
                         @foreach (var pet in Model.Pets)
                         {
@@ -61,7 +68,7 @@
                                     <div class="animal-context">
                                         <p class="animal-name">@pet.Name</p>
                                         <p class="animal-message">
-                                           @pet.Description
+                                            @pet.Description
                                         </p>
                                         <div class="main-adopt-button">
                                             <div class="adopt-button">
