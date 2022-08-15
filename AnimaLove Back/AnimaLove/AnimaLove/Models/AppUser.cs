@@ -21,6 +21,8 @@ namespace AnimaLove.Models
         public IFormFile ProfilePhoto { get; set; }
         public ICollection<FollowerUser> FollowerUser { get; set; }
         public ICollection<FollowingUser> FollowingUser { get; set; }
+        [NotMapped]
+        public List<string> FollowersIds { get; set; }
 
 
 
