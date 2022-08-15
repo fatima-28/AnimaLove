@@ -1,4 +1,5 @@
 using AnimaLove.DAL;
+using AnimaLove.Hubs;
 using AnimaLove.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -53,6 +54,7 @@ namespace AnimaLove
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddControllersWithViews();
+            services.AddSignalR();
             services.ConfigureApplicationCookie(options =>
             {
                 options.LoginPath = "/Account/Login";
@@ -81,6 +83,7 @@ namespace AnimaLove
                 endpoints.MapControllerRoute(
                          name: "default",
              pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapHub<ChatHub>("/chatHub");
               
             });
         }

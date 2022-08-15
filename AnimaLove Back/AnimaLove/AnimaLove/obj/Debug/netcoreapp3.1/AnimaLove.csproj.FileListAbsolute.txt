@@ -331,3 +331,4 @@ C:\Users\mac\Desktop\AnimaLove\AnimaLove Back\AnimaLove\AnimaLove\obj\Debug\netc
 C:\Users\mac\Desktop\AnimaLove\AnimaLove Back\AnimaLove\AnimaLove\obj\Debug\netcoreapp3.1\Razor\Areas\AnimaLoveAdmin\Views\UserRoles\Index.cshtml.g.cs
 C:\Users\mac\Desktop\AnimaLove\AnimaLove Back\AnimaLove\AnimaLove\obj\Debug\netcoreapp3.1\Razor\Views\Follower\Index.cshtml.g.cs
 C:\Users\mac\Desktop\AnimaLove\AnimaLove Back\AnimaLove\AnimaLove\obj\Debug\netcoreapp3.1\Razor\Views\Following\Index.cshtml.g.cs
+C:\Users\mac\Desktop\AnimaLove\AnimaLove Back\AnimaLove\AnimaLove\bin\Debug\netcoreapp3.1\libman.json
