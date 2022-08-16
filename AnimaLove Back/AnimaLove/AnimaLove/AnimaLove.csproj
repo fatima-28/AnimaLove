@@ -9,6 +9,12 @@
     <Compile Remove="Migrations\20220808145937_UpdateUsersTableAddingDescription.Designer.cs" />
     <Compile Remove="Migrations\20220808150032_UpdateProfileTable.cs" />
     <Compile Remove="Migrations\20220808150032_UpdateProfileTable.Designer.cs" />
+    <Compile Remove="Migrations\20220816165537_SomeChanges.cs" />
+    <Compile Remove="Migrations\20220816165537_SomeChanges.Designer.cs" />
+    <Compile Remove="Migrations\20220816172550_FollowerDbSet.cs" />
+    <Compile Remove="Migrations\20220816172550_FollowerDbSet.Designer.cs" />
+    <Compile Remove="Migrations\20220816172757_FollowerUserDbSet.cs" />
+    <Compile Remove="Migrations\20220816172757_FollowerUserDbSet.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

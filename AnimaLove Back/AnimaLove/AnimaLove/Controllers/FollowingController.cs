@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,9 +30,11 @@ namespace AnimaLove.Controllers
             _env = env;
             users = _context.Users.Where(p => !p.IsActivated).ToList();
         }
-        public IActionResult Index()
+        public IActionResult GetFollowings(string Id)
         {
-            return View(users);
+            var userId = Id;
+            var followers = _userManager.Users.Include(u => u.FollowerUser).Where(u => u.Id == Id);
+            return View(followers);
         }
     }
 }

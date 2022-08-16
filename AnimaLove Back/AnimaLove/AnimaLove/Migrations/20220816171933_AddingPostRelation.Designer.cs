@@ -4,14 +4,16 @@ using AnimaLove.DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AnimaLove.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220816171933_AddingPostRelation")]
+    partial class AddingPostRelation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -127,7 +129,7 @@ namespace AnimaLove.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Followers");
+                    b.ToTable("Follower");
                 });
 
             modelBuilder.Entity("AnimaLove.Models.FollowerUser", b =>
@@ -152,22 +154,6 @@ namespace AnimaLove.Migrations
                     b.ToTable("FollowerUser");
                 });
 
-            modelBuilder.Entity("AnimaLove.Models.Following", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("Image")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Followings");
-                });
-
             modelBuilder.Entity("AnimaLove.Models.FollowingUser", b =>
                 {
                     b.Property<int>("Id")
@@ -179,13 +165,11 @@ namespace AnimaLove.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("FollowingId")
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("AppUserId");
-
-                    b.HasIndex("FollowingId");
 
                     b.ToTable("FollowingUser");
                 });
@@ -468,11 +452,11 @@ namespace AnimaLove.Migrations
 
             modelBuilder.Entity("AnimaLove.Models.FollowerUser", b =>
                 {
-                    b.HasOne("AnimaLove.Models.AppUser", null)
+                    b.HasOne("AnimaLove.Models.AppUser", "AppUser")
                         .WithMany("FollowerUser")
                         .HasForeignKey("AppUserId");
 
-                    b.HasOne("AnimaLove.Models.Follower", null)
+                    b.HasOne("AnimaLove.Models.Follower", "Follower")
                         .WithMany("FollowerUser")
                         .HasForeignKey("FollowerId");
                 });
@@ -482,10 +466,6 @@ namespace AnimaLove.Migrations
                     b.HasOne("AnimaLove.Models.AppUser", null)
                         .WithMany("FollowingUser")
                         .HasForeignKey("AppUserId");
-
-                    b.HasOne("AnimaLove.Models.Following", null)
-                        .WithMany("FollowingUser")
-                        .HasForeignKey("FollowingId");
                 });
 
             modelBuilder.Entity("AnimaLove.Models.Post", b =>

@@ -28,16 +28,15 @@ namespace AnimaLove.Controllers
             _userManager = userManager;
             _signInManager = signInManager;
             _env = env;
-            //users = _context.Users.Where(p => !p.IsActivated).ToList();
+            users = _context.Users.Where(p => !p.IsActivated).ToList();
         }
-        public IActionResult Index()
+       
+        public IActionResult GetFollowers(string Id)
         {
-            var userName = _userManager.FindByNameAsync(User.Identity.Name);
-            var userID = userName.Result.Id;
-            var users = _userManager.Users.Include(u => u.FollowerUser).Where(u=> u.Id==userID);
-            
-
-            return View(users);
+            var userId = Id;
+            var followers = _userManager.Users.Include(u => u.FollowerUser).Where(u => u.Id == Id);
+            return View(followers);
         }
+
     }
 }
