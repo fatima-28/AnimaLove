@@ -33,8 +33,15 @@ namespace AnimaLove.Controllers
        
         public IActionResult GetFollowers(string Id)
         {
-            var userId = Id;
-            var followers = _userManager.Users.Include(u => u.FollowerUser).Where(u => u.Id == Id);
+            List<string> FollowerList=new List<string>();
+            var folloWerUser = _context.FollowerUser.Where(f => f.AppUserId == Id).ToList();
+
+            foreach (var item in folloWerUser)
+            {
+                FollowerList.Add(item.FollowerId);
+
+            }
+            var followers = _context.Users.Where(u => FollowerList.Any(id => id == u.Id)).ToList();
             return View(followers);
         }
 

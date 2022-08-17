@@ -20,7 +20,7 @@ namespace AnimaLove.DAL
         public DbSet<Gallery> Galleries { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Post> Posts { get; set; }
-        public DbSet<AppUser> Profiles { get; set; }
+        //public DbSet<AppUser> Profiles { get; set; }
         public DbSet<Follower> Followers { get; set; }
         public DbSet<Following> Followings { get; set; }
         public DbSet<FollowerUser> FollowerUser { get; set; }
