@@ -1,5 +1,5 @@
 ﻿@using AnimaLove.Models
-@model IEnumerable<AppUser>
+@model List<AppUser>
 @{
     ViewData["Title"] = "Index";
 }
@@ -7,7 +7,7 @@
     <div class="followers">
         <div class="followers-inner">
             <div class="followers-title">
-                <p>Following</p>
+                <p>Followings</p>
             </div>
             <div class="followers-list">
                 <div class="followers-list-inner">
@@ -18,12 +18,12 @@
                                 <div class="follower-single-item">
                                     <img src="~/assets/img/@user.ProfileImage" alt="profile image">
                                     <div class="follower-username-box">
-                                        <p class="follower-username">@user.UserName</p>
+                                        <a style="color:black;" asp-controller="Follower" asp-action="GetOthersProfile" asp-route-id="@user.Id"> <p class="follower-username">@user.UserName</p></a>
                                     </div>
                                 </div>
                                 <div class="follow-button">
                                     <div class="follow-main">
-                                        <a href=""> Unfollow</a>
+                                        <a style="color:white;"> Unfollow</a>
                                     </div>
                                 </div>
                             </div>

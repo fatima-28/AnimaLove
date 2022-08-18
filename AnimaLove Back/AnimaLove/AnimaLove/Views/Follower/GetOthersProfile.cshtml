@@ -1,9 +1,11 @@
-﻿
-@model AnimaLove.Models.AppUser
+﻿@model AnimaLove.Models.AppUser
 @{
     Layout = null;
-  
 }
+@{
+    ViewData["Title"] = "GetOthersProfile";
+}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,8 +33,8 @@
           rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Acme&family=Amatic+SC:wght@700&family=Josefin+Sans:ital,wght@0,400;1,700&display=swap"
           rel="stylesheet">
-    <link rel="icon" href="./assets/img/icon-img.png">
-    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="icon" href="~/assets/img/icon-img.png">
+    <link rel="stylesheet" href="~/assets/css/main.css">
     <title>AnimaLove</title>
 </head>
 
@@ -44,22 +46,21 @@
                 <div class="profile-inner">
                     <div class="user-info">
                         <div class="user-info-items">
-
-
-
-                            <img src="./assets/img/@Model.ProfileImage" alt="user">
+                            <img src="~/assets/img/@Model.ProfileImage" alt="user">
                             <p class="user-fullname">@Model.FullName</p>
-                            <p class="user-nickname">@User.Identity.Name</p>
-
-
-
+                            <p class="user-nickname">
+                                @Model.UserName <a asp-controller="Message" asp-action="Index">
+                                    <i class="fa-solid fa-message"></i>
+                                </a>
+                            </p>
                             <div class="follow-info">
                                 <a asp-controller="Follower" asp-action="GetFollowers" asp-route-id="@Model.Id">Followers</a>
-                                <a asp-controller="Following" asp-action="GetFollowings"asp-route-id="@Model.Id">Followings</a>
+                                <a asp-controller="Following" asp-action="GetFollowings" asp-route-id="@Model.Id">Followings</a>
                             </div>
-                            <div class="edit">
-                                <a asp-action="Edit" asp-route-id="@Model.Id">Edit Profile</a>
+                            <div class="follow">
+                                <a href="">Follow</a>
                             </div>
+
 
                         </div>
                         <div class="user-info-items description-item">
@@ -67,8 +68,8 @@
                                 <div class="user-description-main-item">
 
                                     <div>
-                                        <p class="user-desc">
-                                            <b>User Description</b>
+                                        <p class="user-desc" >
+                                            <b>User Description</b> 
                                             @Model.Description
                                         </p>
                                     </div>
@@ -76,80 +77,62 @@
                             </div>
                         </div>
                     </div>
-                    <div class="settings">
-
-
-                        <i class="fa-solid fa-ellipsis-vertical button-settings " id="button-settings">
-
-                        </i>
-                        <div class="settings-list">
-                            <ul>
-                                <li><a asp-controller="Home" asp-action="Index">home</a></li>
-
-                                <li><a asp-controller="Post" asp-action="Index">posts</a></li>
-                                <li><a asp-controller="AboutUs" asp-action="Index">about</a></li>
-                                <li><a asp-controller="Message" asp-action="Index">Messages</a></li>
-                                <li class="sign-out"><a asp-controller="Account" asp-action="Logout">Sign Out</a></li>
-
-                            </ul>
-                        </div>
-
-                    </div>
+               
                     <div class=" logo-item my-post-title">
 
                         <div class="logo-and-settings logo-item">
-                            <img src="./assets/img/logo.png" alt="logo">
-
-
-
+                            <img src="~/assets/img/logo.png" alt="logo">
 
                         </div>
+                      
 
                     </div>
+
+
+                </div>
+
+            </div>
         </section>
         <section id="myposts">
             <div class="myposts">
                 <div class="my-posts-inner">
                     <div class="posts-items">
 
-                        <a href="www" class="post-link">
-                            <div class="single-post-items ">
-                                <i class="fa-solid fa-plus"></i>
-                            </div>
+
                         </a>
-                        <a asp-controller="FullPostInfo"  asp-action="Index" class="post-link">
+                        <a href="www" class="post-link">
                             <div class="single-post-items">
-                                <img src="./assets/img/awsome-cat-img.jpg" alt="photo">
+                                <img src="~/assets/img/awsome-cat-img.jpg" alt="photo">
                             </div>
                         </a>
                         <a href="www" class="post-link">
                             <div class="single-post-items">
-                                <img src="./assets/img/awsome-cat-img.jpg" alt="photo">
+                                <img src="~/assets/img/awsome-cat-img.jpg" alt="photo">
                             </div>
                         </a>
                         <a href="www" class="post-link">
                             <div class="single-post-items">
-                                <img src="./assets/img/awsome-cat-img.jpg" alt="photo">
+                                <img src="~/assets/img/awsome-cat-img.jpg" alt="photo">
                             </div>
                         </a>
                         <a href="www" class="post-link">
                             <div class="single-post-items">
-                                <img src="./assets/img/awsome-cat-img.jpg" alt="photo">
+                                <img src="~/assets/img/awsome-cat-img.jpg" alt="photo">
                             </div>
                         </a>
                         <a href="www" class="post-link">
                             <div class="single-post-items">
-                                <img src="./assets/img/awsome-cat-img.jpg" alt="photo">
+                                <img src="~/assets/img/awsome-cat-img.jpg" alt="photo">
                             </div>
                         </a>
                         <a href="www" class="post-link">
                             <div class="single-post-items">
-                                <img src="./assets/img/awsome-cat-img.jpg" alt="photo">
+                                <img src="~/assets/img/awsome-cat-img.jpg" alt="photo">
                             </div>
                         </a>
                         <a href="www" class="post-link">
                             <div class="single-post-items">
-                                <img src="./assets/img/awsome-cat-img.jpg" alt="photo">
+                                <img src="~/assets/img/awsome-cat-img.jpg" alt="photo">
                             </div>
                         </a>
 
@@ -168,12 +151,11 @@
             integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <script src="./assets/js/hamburger-bars.js"></script>
-    <script src="./assets/js/main.js"></script>
-    <script src="./assets/js/slider.js"></script>
-    <script src="./assets/js/shop-basket.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="./assets/js/open-close-settings.js"></script>
+    <script src="~/assets/js/hamburger-bars.js"></script>
+    <script src="~/assets/js/main.js"></script>
+    <script src="~/assets/js/slider.js"></script>
+    <script src="~/assets/js/shop-basket.js"></script>
 </body>
 
 </html>
+

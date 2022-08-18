@@ -46,24 +46,18 @@ namespace AnimaLove.Controllers
             return View(followers);
           
         }
-        //public IActionResult GetOthersProfile(string Id)
-        //{
-
-        //    return View();
-        //}
-        //public  IActionResult CreateFollower(string Id)
-        //{
-        //    if (Id==null)
-        //    {
-        //        return BadRequest();
-        //    }
-
-        //    FollowerList.Add(Id);
-        //    var followers = _context.Users.Where(u => FollowerList.Any(id => id == u.Id)).ToList();
+        public IActionResult GetOthersProfile(string Id, AppUser user)
+        {
+            if (Id==null)
+            {
+                return BadRequest();
+            }
+            var follower = _context.Users.Where(u => u.Id == Id).FirstOrDefault();
+           
             
-        //    return RedirectToAction(nameof(GetFollowers));
-
-        //}
+            return View(follower);
+        }
+        
 
 
     }

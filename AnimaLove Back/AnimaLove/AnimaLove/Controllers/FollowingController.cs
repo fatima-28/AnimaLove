@@ -20,6 +20,7 @@ namespace AnimaLove.Controllers
         private readonly SignInManager<AppUser> _signInManager;
         private AppDbContext _context { get; }
 
+
         public IEnumerable<AppUser> users;
         public FollowingController(AppDbContext context, UserManager<AppUser> userManager,
                                       SignInManager<AppUser> signInManager, IWebHostEnvironment env)
@@ -30,11 +31,34 @@ namespace AnimaLove.Controllers
             _env = env;
             users = _context.Users.Where(p => !p.IsActivated).ToList();
         }
+
         public IActionResult GetFollowings(string Id)
         {
-            var userId = Id;
-            var followers = _userManager.Users.Include(u => u.FollowerUser).Where(u => u.Id == Id);
+
+            List<string> FollowingList = new List<string>();
+            var followingUser = _context.FollowingUser.Where(f => f.AppUserId == Id).ToList();
+            foreach (var item in followingUser)
+            {
+                FollowingList.Add(item.FollowingId);
+
+            }
+            var followers = _context.Users.Where(u => FollowingList.Any(id => id == u.Id)).ToList();
             return View(followers);
+
         }
+        //public IActionResult GetOthersProfile(string Id, AppUser user)
+        //{
+        //    if (Id == null)
+        //    {
+        //        return BadRequest();
+        //    }
+        //    var follower = _context.Users.Where(u => u.Id == Id).FirstOrDefault();
+
+
+        //    return View(follower);
+        //}
+
+
+
     }
 }
