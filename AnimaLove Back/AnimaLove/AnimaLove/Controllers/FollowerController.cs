@@ -19,8 +19,8 @@ namespace AnimaLove.Controllers
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
         private AppDbContext _context { get; }
-       
-
+        
+        static List<string> FollowingList = new List<string>();
         public IEnumerable<AppUser> users;
         public FollowerController(AppDbContext context, UserManager<AppUser> userManager,
                                       SignInManager<AppUser> signInManager, IWebHostEnvironment env)
@@ -34,8 +34,8 @@ namespace AnimaLove.Controllers
        
         public IActionResult GetFollowers(string Id)
         {
-
             List<string> FollowerList = new List<string>();
+
             var followerUser = _context.FollowerUser.Where(f => f.AppUserId == Id).ToList();
             foreach (var item in followerUser)
             {
@@ -57,7 +57,38 @@ namespace AnimaLove.Controllers
             
             return View(follower);
         }
-        
+        public async Task< IActionResult> FollowAction(string Id)
+        {
+         
+              var user = _context.Users.Where(w => w.Id == Id).FirstOrDefault(u=>u.Id==Id);
+
+                Following newUser = new Following { 
+                
+                Id=user.Id,
+                UserName=user.UserName,
+                Image=user.ProfileImage
+                
+                };
+
+               _context.Followings.Add(newUser);
+             await   _context.SaveChangesAsync();
+
+            var userId = _userManager.GetUserId(HttpContext.User);
+            FollowingUser newFollowingUser = new FollowingUser
+            {
+                FollowingId=Id,
+                AppUserId= userId   
+
+            };
+          _context.FollowingUser.Add(newFollowingUser);
+           await _context.SaveChangesAsync();
+            return RedirectToAction("Index","Profile");
+            
+
+            
+        }
+
+
 
 
     }
