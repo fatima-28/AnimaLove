@@ -48,9 +48,13 @@ namespace AnimaLove.Controllers
         }
         public async Task<IActionResult > UnfollowAction(string Id)
         {
-            var user = _context.FollowingUser.Where(u => u.FollowingId == Id).FirstOrDefault();
+            //var user = _context.FollowingUser.Where(u => u.FollowingId == Id).Where(u=>!u.IsDeleted).FirstOrDefault();
             var userId = _userManager.GetUserId(HttpContext.User);
-            FollowingUser userDb = _context.FollowingUser.Where(u => !u.IsDeleted).FirstOrDefault();
+            FollowingUser userDb = await _context.FollowingUser.Where(u =>!u.IsDeleted).FirstOrDefaultAsync(u=>u.FollowingId==Id);
+            if (userDb==null)
+            {
+                return BadRequest();
+            }
             userDb.IsDeleted = true;
           await  _context.SaveChangesAsync();
             //public async Task<IActionResult> Delete(int? id)
