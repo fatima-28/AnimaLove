@@ -106,6 +106,8 @@ namespace AnimaLove.Controllers
                 return RedirectToAction(nameof(Index));
             }
             return View();
+            //return View();
+
 
         }
         private string UploadedFile(CreatePostViewModel model)
