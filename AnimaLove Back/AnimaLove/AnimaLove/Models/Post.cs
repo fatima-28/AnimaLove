@@ -15,6 +15,7 @@ namespace AnimaLove.Models
         public int LikeCount { get; set; }
         public bool IsDeleted { get; set; }
         public string AppUserId { get; set; }
+        public AppUser AppUser { get; set; }
 
     }
 }

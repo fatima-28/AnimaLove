@@ -15,7 +15,8 @@ namespace AnimaLove.Models
         public string Description { get; set; }
         
         public string ProfileImage { get; set; }
-        public Post Posts { get; set; }
+        //public Post Posts { get; set; }
+        public ICollection<Post> Posts { get; set; }
         public bool IsActivated { get; set; }
         [NotMapped,Required]
         public IFormFile ProfilePhoto { get; set; }

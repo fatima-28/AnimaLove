@@ -1,8 +1,9 @@
-﻿
+﻿@using AnimaLove.Models
 @model AnimaLove.Models.AppUser
+
 @{
     Layout = null;
-  
+
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -31,8 +32,8 @@
           rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Acme&family=Amatic+SC:wght@700&family=Josefin+Sans:ital,wght@0,400;1,700&display=swap"
           rel="stylesheet">
-    <link rel="icon" href="./assets/img/icon-img.png">
-    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="icon" href="~/assets/img/icon-img.png">
+    <link rel="stylesheet" href="~/assets/css/main.css">
     <title>AnimaLove</title>
 </head>
 
@@ -47,7 +48,7 @@
 
 
 
-                            <img src="./assets/img/@Model.ProfileImage" alt="user">
+                            <img src="~/assets/img/@Model.ProfileImage" alt="user">
                             <p class="user-fullname">@Model.FullName</p>
                             <p class="user-nickname">@User.Identity.Name</p>
 
@@ -55,7 +56,7 @@
 
                             <div class="follow-info">
                                 <a asp-controller="Follower" asp-action="GetFollowers" asp-route-id="@Model.Id">Followers</a>
-                                <a asp-controller="Following" asp-action="GetFollowings"asp-route-id="@Model.Id">Followings</a>
+                                <a asp-controller="Following" asp-action="GetFollowings" asp-route-id="@Model.Id">Followings</a>
                             </div>
                             <div class="edit">
                                 <a asp-action="Edit" asp-route-id="@Model.Id">Edit Profile</a>
@@ -98,7 +99,7 @@
                     <div class=" logo-item my-post-title">
 
                         <div class="logo-and-settings logo-item">
-                            <img src="./assets/img/logo.png" alt="logo">
+                            <img src="~/assets/img/logo.png" alt="logo">
 
 
 
@@ -112,46 +113,23 @@
                 <div class="my-posts-inner">
                     <div class="posts-items">
 
-                        <a href="www" class="post-link">
+                        <a asp-controller="Post" asp-action="AddNewPost" class="post-link">
                             <div class="single-post-items ">
                                 <i class="fa-solid fa-plus"></i>
                             </div>
                         </a>
-                        <a asp-controller="FullPostInfo"  asp-action="Index" class="post-link">
-                            <div class="single-post-items">
-                                <img src="./assets/img/awsome-cat-img.jpg" alt="photo">
-                            </div>
-                        </a>
-                        <a href="www" class="post-link">
-                            <div class="single-post-items">
-                                <img src="./assets/img/awsome-cat-img.jpg" alt="photo">
-                            </div>
-                        </a>
-                        <a href="www" class="post-link">
-                            <div class="single-post-items">
-                                <img src="./assets/img/awsome-cat-img.jpg" alt="photo">
-                            </div>
-                        </a>
-                        <a href="www" class="post-link">
-                            <div class="single-post-items">
-                                <img src="./assets/img/awsome-cat-img.jpg" alt="photo">
-                            </div>
-                        </a>
-                        <a href="www" class="post-link">
-                            <div class="single-post-items">
-                                <img src="./assets/img/awsome-cat-img.jpg" alt="photo">
-                            </div>
-                        </a>
-                        <a href="www" class="post-link">
-                            <div class="single-post-items">
-                                <img src="./assets/img/awsome-cat-img.jpg" alt="photo">
-                            </div>
-                        </a>
-                        <a href="www" class="post-link">
-                            <div class="single-post-items">
-                                <img src="./assets/img/awsome-cat-img.jpg" alt="photo">
-                            </div>
-                        </a>
+
+                     
+
+                        @*@foreach (var post in Model.Posts)
+                        {
+                            <a asp-controller="FullPostInfo" asp-action="Index" class="post-link">
+                                <div class="single-post-items">
+                                    <img src="~/assets/img/@post.PostImage" alt="photo">
+                                </div>
+                            </a>
+
+                        }*@
 
                     </div>
                 </div>
@@ -168,12 +146,12 @@
             integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <script src="./assets/js/hamburger-bars.js"></script>
-    <script src="./assets/js/main.js"></script>
-    <script src="./assets/js/slider.js"></script>
-    <script src="./assets/js/shop-basket.js"></script>
+    <script src="~/assets/js/hamburger-bars.js"></script>
+    <script src="~/assets/js/main.js"></script>
+    <script src="~/assets/js/slider.js"></script>
+    <script src="~/assets/js/shop-basket.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="./assets/js/open-close-settings.js"></script>
+    <script src="~/assets/js/open-close-settings.js"></script>
 </body>
 
 </html>

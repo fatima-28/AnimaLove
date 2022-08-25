@@ -36,7 +36,7 @@ namespace AnimaLove.Controllers
         {
 
             List<string> FollowingList = new List<string>();
-            var followingUser = _context.FollowingUser.Where(f => f.AppUserId == Id).ToList();
+            var followingUser = _context.FollowingUser.Where(f => f.AppUserId == Id).Where(u=>!u.IsDeleted).ToList();
             foreach (var item in followingUser)
             {
                 FollowingList.Add(item.FollowingId);
@@ -46,17 +46,38 @@ namespace AnimaLove.Controllers
             return View(followers);
 
         }
-        //public IActionResult GetOthersProfile(string Id, AppUser user)
-        //{
-        //    if (Id == null)
-        //    {
-        //        return BadRequest();
-        //    }
-        //    var follower = _context.Users.Where(u => u.Id == Id).FirstOrDefault();
+        public async Task<IActionResult > UnfollowAction(string Id)
+        {
+            var user = _context.FollowingUser.Where(u => u.FollowingId == Id).FirstOrDefault();
+            var userId = _userManager.GetUserId(HttpContext.User);
+            FollowingUser userDb = _context.FollowingUser.Where(u => !u.IsDeleted).FirstOrDefault();
+            userDb.IsDeleted = true;
+          await  _context.SaveChangesAsync();
+            //public async Task<IActionResult> Delete(int? id)
+            //{
+            //    if (id == null)
+            //    {
+            //        return BadRequest();
+            //    }
+            //    Category categoryDb = _context.Categories.Where(c => !c.IsDeleted).FirstOrDefault(c => c.Id == id);
+            //    if (categoryDb == null)
+            //        return NotFound();
+
+            //    categoryDb.IsDeleted = true;
+            //    await _context.SaveChangesAsync();
+            //    return RedirectToAction(nameof(Index));
+            //}
 
 
-        //    return View(follower);
-        //}
+            //var followingUser = _context.Followings.Where(f => f.Id == Id).FirstOrDefault(f=>f.Id==Id);
+            //  _context.Followings.Remove(followingUser);
+            //_context.SaveChangesAsync();
+
+            return RedirectToAction("Index", "Profile");
+
+
+
+        }
 
 
 

@@ -59,20 +59,18 @@ namespace AnimaLove.Controllers
         }
         public async Task< IActionResult> FollowAction(string Id)
         {
-         
-              var user = _context.Users.Where(w => w.Id == Id).FirstOrDefault(u=>u.Id==Id);
 
-                Following newUser = new Following { 
-                
-                Id=user.Id,
-                UserName=user.UserName,
-                Image=user.ProfileImage
-                
-                };
+            //   Following newUser = new Following { 
 
-               _context.Followings.Add(newUser);
-             await   _context.SaveChangesAsync();
+            //   Id=user.Id,
+            //   UserName=user.UserName,
+            //   Image=user.ProfileImage
 
+            //   };
+
+            //  _context.Followings.Add(newUser);
+            //await   _context.SaveChangesAsync();
+            var user = _context.Users.Where(w => w.Id == Id).FirstOrDefault(u => u.Id == Id);
             var userId = _userManager.GetUserId(HttpContext.User);
             FollowingUser newFollowingUser = new FollowingUser
             {
@@ -87,7 +85,6 @@ namespace AnimaLove.Controllers
 
             
         }
-
 
 
 
