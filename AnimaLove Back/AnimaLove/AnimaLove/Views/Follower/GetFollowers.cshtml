@@ -14,21 +14,22 @@
                     <div class="followers-items">
                         @foreach (var user in Model)
                         {
-                            <div class="follower-single-item-main">
-                                <div class="follower-single-item">
-                                    <img src="~/assets/img/@user.ProfileImage" alt="profile image">
-                                    <div class="follower-username-box">
-                                       <a style="color:black;" asp-controller="Follower" asp-action="GetOthersProfile" asp-route-id="@user.Id"> <p class="follower-username">@user.UserName</p></a>
-                                    </div>
-                                </div>
-                                <div class="follow-button">
-                            
-
-                                    <div class="follow-main">
-                                        <a style="color:white;" asp-controller="Follower" asp-action="FollowAction" asp-route-id="@user.Id"> Follow</a>
-                                    </div>
+                        <div class="follower-single-item-main">
+                            <div class="follower-single-item">
+                                <img src="~/assets/img/@user.ProfileImage" alt="profile image">
+                                <div class="follower-username-box">
+                                    <a style="color:black;" asp-controller="Follower" asp-action="GetOthersProfile" asp-route-id="@user.Id"> <p class="follower-username">@user.UserName</p></a>
                                 </div>
                             </div>
+
+                        
+                            <div class="follow-button">
+
+                                <div class="follow-main">
+                                    <a style="color:white;" asp-controller="Follower" asp-action="FollowAction" asp-route-id="@user.Id"> Follow</a>
+                                </div>
+                            </div>
+                        </div>
 
                         }
 

@@ -34,8 +34,36 @@ namespace AnimaLove.Controllers
             };
             return View(home);
         }
-        
-        public async Task< IActionResult >AddNewPost(CreatePostViewModel model)
+        public IActionResult GetPosts(string Id)
+        {
+            List<int> PostsList = new List<int>();
+            var postDb = _context.Posts.Where(f => f.AppUserId == Id).ToList();
+            foreach (var item in postDb)
+            {
+                PostsList.Add(item.Id);
+
+            }
+            var posts = _context.Posts.Where(u => PostsList.Any(Id => Id == u.Id)).ToList();
+               return View(posts);
+
+
+
+            //public IActionResult GetFollowers(string Id)
+            //{
+            //    List<string> FollowerList = new List<string>();
+
+            //    var followerUser = _context.FollowerUser.Where(f => f.AppUserId == Id).ToList();
+            //    foreach (var item in followerUser)
+            //    {
+            //        FollowerList.Add(item.FollowerId);
+
+            //    }
+            //    var followers = _context.Users.Where(u => FollowerList.Any(id => id == u.Id)).ToList();
+            //    return View(followers);
+
+            //}
+        }
+        public async Task< IActionResult >AddNewPost(CreatePostViewModel model, string Id)
         {
             var MyuserName = _userManager.FindByNameAsync(HttpContext.User.Identity.Name);
            var UserId= MyuserName.Result.Id;
@@ -57,7 +85,7 @@ namespace AnimaLove.Controllers
                     ModelState.AddModelError("PostDescription", "Description must be at least 10 character");
                     return View();
                 }
-
+               
 
                 Post post = new Post
                 {
@@ -65,11 +93,14 @@ namespace AnimaLove.Controllers
                     PostDescription = model.PostDescription,
                     PostImage = uniqueFileName,
                     AppUserId=UserId,
-                    //userName=model.AppUser.UserName
+                    userName=model.AppUser.UserName
 
 
 
                 };
+                MyuserName.Result.Posts.Add(post);
+
+
                 _context.Posts.Add(post);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

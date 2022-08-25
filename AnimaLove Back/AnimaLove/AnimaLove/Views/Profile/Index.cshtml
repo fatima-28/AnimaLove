@@ -108,33 +108,13 @@
 
                     </div>
         </section>
-        <section id="myposts">
-            <div class="myposts">
-                <div class="my-posts-inner">
-                    <div class="posts-items">
 
-                        <a asp-controller="Post" asp-action="AddNewPost" class="post-link">
-                            <div class="single-post-items ">
-                                <i class="fa-solid fa-plus"></i>
-                            </div>
-                        </a>
-
-                     
-
-                        @*@foreach (var post in Model.Posts)
-                        {
-                            <a asp-controller="FullPostInfo" asp-action="Index" class="post-link">
-                                <div class="single-post-items">
-                                    <img src="~/assets/img/@post.PostImage" alt="photo">
-                                </div>
-                            </a>
-
-                        }*@
-
-                    </div>
-                </div>
+        <section>
+            <div>
+                <a asp-controller="Post" asp-action="GetPosts" asp-route-id="@Model.Id"> <p style="text-align: center; color: #3e97a3; font-size:50px; font-weight:700;cursor:pointer;" class="getposttext" >Watch Posts</p></a>
             </div>
         </section>
+    
     </main>
     <!-- scripts started -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"

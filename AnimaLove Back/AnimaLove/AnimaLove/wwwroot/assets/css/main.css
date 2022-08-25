@@ -6568,3 +6568,15 @@ div.follow:hover {
   width: 100%;
   height: 100%;
 }
+/*.getposttext{
+    transition: 1s;
+    &:hover{
+        transform: scale(1.5);
+    }
+}*/
+/*.getposttext{
+    transition:1s;
+}
+.getposttext:hover{
+    transform:scale(1.5);
+}*/

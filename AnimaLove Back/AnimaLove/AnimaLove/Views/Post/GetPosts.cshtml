@@ -1,0 +1,121 @@
+﻿@using AnimaLove.Models
+@{
+    Layout = null;
+}
+@{
+    ViewData["Title"] = "GetPosts";
+}
+@model List<Post>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+          integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"
+          integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Amatic+SC:wght@700&family=Josefin+Sans:ital,wght@0,400;1,700&family=Nunito+Sans&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Amatic+SC:wght@700&family=Josefin+Sans:ital,wght@0,400;1,700&display=swap"
+          rel="stylesheet">
+    <link rel="icon" href="~/assets/img/icon-img.png">
+    <link rel="stylesheet" href="~/assets/css/main.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <title>AnimaLove</title>
+</head>
+
+<body>
+    <!-- header started -->
+    <header id="header">
+        <div class="navbar">
+            <div class="nav-inner">
+                <div class="logo">
+                    <img src="~/assets/img/logo.png" alt="logo">
+                </div>
+            </div>
+            <div class="nav-inner pages">
+                <ul class="bntcontainer" id="bntcontainer">
+                    <li class="list">
+                        <a class=" pages-item " asp-controller="Home" asp-action="Index">Home</a>
+                    </li>
+                    <li class="list">
+                        <a class=" pages-item " href="#adoption">Adoption</a>
+                    </li>
+                    <li><a class="pages-item" asp-controller="Post" asp-action="Index">Posts</a></li>
+                    <li><a asp-controller="AboutUs" asp-action="Index" class="pages-item">About</a></li>
+
+
+
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li><a class="pages-item text-primary" style="text-transform:lowercase;" asp-controller="Profile" asp-action="Index">@User.Identity.Name</a> </li>
+
+                    }
+                    else
+                    {
+                        <li><a asp-controller="Account" asp-action="Register" class="pages-item text-primary">Sign In</a> </li>
+                    }
+                    <li><a href="#" class="pages-item" style="display:none;">Profile</a> </li>
+
+                </ul>
+            </div>
+
+            <div id="myNav" class="overlay">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <div class="overlay-content">
+                    <a asp-controller="Home" asp-action="Index" class="hamburger-menu-items ">Home</a>
+                    <a href="#adoption" class="hamburger-menu-items">Adoption</a>
+                    <a asp-controller="Post" asp-action="Index" class="hamburger-menu-items">Posts</a>
+                    <a asp-controller="AboutUs" asp-action="Index" class="hamburger-menu-items">About</a>
+                    <a asp-controller="Profile" asp-action="Index" class="hamburger-menu-items">Profile</a>
+
+
+                </div>
+            </div>
+            <div class="hamburger" onclick="openNav()"><i class="fa-solid fa-bars  hamburger"></i></div>
+           
+           
+           
+        </div>
+    </header>
+    <section id="myposts">
+        <div class="myposts">
+            <div class="my-posts-inner">
+                <div class="posts-items">
+
+                    <a asp-controller="Post" asp-action="AddNewPost" class="post-link">
+                        <div class="single-post-items ">
+                            <i class="fa-solid fa-plus"></i>
+                        </div>
+                    </a>
+                    @foreach (var post in Model)
+                        {
+                            <a asp-controller="FullPostInfo" asp-action="Index" class="post-link">
+                                <div class="single-post-items">
+                                    <img src="~/assets/img/@post.PostImage" alt="photo">
+                                </div>
+                            </a>
+
+                        }
+
+                </div>
+            </div>
+        </div>
+    </section>
+    </body>
+</html>
