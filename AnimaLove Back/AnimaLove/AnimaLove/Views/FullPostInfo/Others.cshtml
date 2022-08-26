@@ -1,0 +1,49 @@
+﻿@model AnimaLove.Models.Post
+@{
+    ViewData["Title"] = "Others";
+}
+
+<main>
+    <section id="posts">
+        <div class="posts">
+            <div class="posts-inner">
+
+
+
+
+                <div class="post-card">
+
+                    <div class="post-img">
+
+
+                        <img src="~/assets/img/@Model.PostImage" alt="image">
+
+                    </div>
+                    <div class="title-icons">
+
+
+
+                        <p class="post-title">@Model.PostTitle</p>
+                        <div class="post-icons">
+                            <a asp-controller="Message" asp-action="Index"><i class="fa-solid fa-message"></i></a>
+                        </div>
+                        <div class="post-icons">
+                            <div class="edit">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-description">
+                        <p>
+                            @Model.PostDescription
+                        </p>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </section>
+</main>
+

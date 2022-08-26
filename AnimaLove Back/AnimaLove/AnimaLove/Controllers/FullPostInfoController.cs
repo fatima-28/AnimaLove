@@ -1,4 +1,10 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using AnimaLove.DAL;
+using AnimaLove.Models;
+using AnimaLove.ViewModels;
+using AnimaLove.ViewModels.PostsViewModels;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -10,9 +16,37 @@ namespace AnimaLove.Controllers
     [Authorize]
     public class FullPostInfoController : Controller
     {
-        public IActionResult Index()
+        private IWebHostEnvironment _env { get; }
+       
+        private AppDbContext _context { get; }
+        public FullPostInfoController(AppDbContext context, IWebHostEnvironment env)
         {
-            return View();
+            _context = context;
+            _env = env;
+        }
+        public  IActionResult Index(int? Id, Post model)
+        {
+            if (Id == null)
+            {
+                return BadRequest();
+            }
+            var post = _context.Posts.Where(p=> !p.IsDeleted).FirstOrDefault(p=>p.Id==Id);
+
+
+            return View(post);
+
+        }
+        public IActionResult Others(int? Id, Post model)
+        {
+            if (Id == null)
+            {
+                return BadRequest();
+            }
+            var post = _context.Posts.Where(p => !p.IsDeleted).FirstOrDefault(p => p.Id == Id);
+
+
+            return View(post);
+
         }
     }
 }

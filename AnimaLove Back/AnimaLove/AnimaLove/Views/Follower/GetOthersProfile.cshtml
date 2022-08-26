@@ -68,8 +68,8 @@
                                 <div class="user-description-main-item">
 
                                     <div>
-                                        <p class="user-desc" >
-                                            <b>User Description</b> 
+                                        <p class="user-desc">
+                                            <b>User Description</b>
                                             @Model.Description
                                         </p>
                                     </div>
@@ -77,14 +77,14 @@
                             </div>
                         </div>
                     </div>
-               
+
                     <div class=" logo-item my-post-title">
 
                         <div class="logo-and-settings logo-item">
                             <img src="~/assets/img/logo.png" alt="logo">
 
                         </div>
-                      
+
 
                     </div>
 
@@ -93,7 +93,12 @@
 
             </div>
         </section>
-        <section id="myposts">
+        <section>
+            <div>
+                <a asp-controller="Post" asp-action="GetOthersPosts" asp-route-id="@Model.Id"> <p style="text-align: center; color: #3e97a3; font-size:50px; font-weight:700;cursor:pointer;" class="getposttext">Watch Posts</p></a>
+            </div>
+        </section>
+        @*<section id="myposts">
             <div class="myposts">
                 <div class="my-posts-inner">
                     <div class="posts-items">
@@ -139,7 +144,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section>*@
     </main>
     <!-- scripts started -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"

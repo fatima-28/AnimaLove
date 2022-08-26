@@ -1,4 +1,4 @@
-﻿
+﻿@model AnimaLove.Models.Post 
 @{
     ViewData["Title"] = "Index";
 }
@@ -16,14 +16,14 @@
                         <div class="post-img">
                            
 
-                            <img src="~/assets/img/baby-dog-yellow.jpg" alt="image">
+                            <img src="~/assets/img/@Model.PostImage" alt="image">
 
                         </div>
                         <div class="title-icons">
 
 
 
-                            <p class="post-title">MyCant</p>
+                            <p class="post-title">@Model.PostTitle</p>
                             <div class="post-icons">
                                 <div class="edit">
                                     <a href="#">Edit Post</a>
@@ -33,7 +33,7 @@
                         </div>
                         <div class="post-description">
                             <p>
-                               messagenjdbjbv
+                              @Model.PostDescription
                             </p>
                         </div>
                     </div>

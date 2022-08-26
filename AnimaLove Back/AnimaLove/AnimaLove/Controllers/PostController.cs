@@ -43,7 +43,7 @@ namespace AnimaLove.Controllers
                 PostsList.Add(item.Id);
 
             }
-            var posts = _context.Posts.Where(u => PostsList.Any(Id => Id == u.Id)).ToList();
+            var posts = _context.Posts.Where(u => PostsList.Any(Id => Id == u.Id)).Where(p=>!p.IsDeleted).ToList();
                return View(posts);
 
 
@@ -63,50 +63,69 @@ namespace AnimaLove.Controllers
 
             //}
         }
+        public IActionResult GetOthersPosts(string Id)
+        {
+            List<int> PostsList = new List<int>();
+            var postDb = _context.Posts.Where(f => f.AppUserId == Id).ToList();
+            foreach (var item in postDb)
+            {
+                PostsList.Add(item.Id);
+
+            }
+            var posts = _context.Posts.Where(u => PostsList.Any(Id => Id == u.Id)).Where(p => !p.IsDeleted).ToList();
+            return View(posts);
+
+
+
+       
+        }
         public async Task< IActionResult >AddNewPost(CreatePostViewModel model, string Id)
         {
-            var MyuserName = _userManager.FindByNameAsync(HttpContext.User.Identity.Name);
-           var UserId= MyuserName.Result.Id;
-            if (ModelState.IsValid)
-            {
-                string uniqueFileName = UploadedFile(model);
-                if (model.PostTitle == null)
-                {
-                    ModelState.AddModelError("PostTitle", "Name is required");
-                    return View();
-                }
-                if (model.PostDescription == null)
-                {
-                    ModelState.AddModelError("PostDescription", "Description must be at least 10 character");
-                    return View();
-                }
-                if (model.PostDescription.Length <= 10)
-                {
-                    ModelState.AddModelError("PostDescription", "Description must be at least 10 character");
-                    return View();
-                }
+
+
+            return View();
+           // var MyuserName = _userManager.FindByNameAsync(HttpContext.User.Identity.Name);
+           //var UserId= MyuserName.Result.Id;
+           // if (ModelState.IsValid)
+           // {
+           //     string uniqueFileName = UploadedFile(model);
+           //     if (model.PostTitle == null)
+           //     {
+           //         ModelState.AddModelError("PostTitle", "Name is required");
+           //         return View();
+           //     }
+           //     if (model.PostDescription == null)
+           //     {
+           //         ModelState.AddModelError("PostDescription", "Description must be at least 10 character");
+           //         return View();
+           //     }
+           //     if (model.PostDescription.Length <= 10)
+           //     {
+           //         ModelState.AddModelError("PostDescription", "Description must be at least 10 character");
+           //         return View();
+           //     }
                
 
-                Post post = new Post
-                {
-                    PostTitle = model.PostTitle,
-                    PostDescription = model.PostDescription,
-                    PostImage = uniqueFileName,
-                    AppUserId=UserId,
-                    userName=model.AppUser.UserName
+           //     Post post = new Post
+           //     {
+           //         PostTitle = model.PostTitle,
+           //         PostDescription = model.PostDescription,
+           //         PostImage = uniqueFileName,
+           //         AppUserId=UserId,
+           //         userName=model.AppUser.UserName
 
 
 
-                };
-                MyuserName.Result.Posts.Add(post);
+           //     };
+           //     MyuserName.Result.Posts.Add(post);
 
 
-                _context.Posts.Add(post);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View();
-            //return View();
+           //     _context.Posts.Add(post);
+           //     await _context.SaveChangesAsync();
+           //     return RedirectToAction(nameof(Index));
+           // }
+           // return View();
+           // //return View();
 
 
         }

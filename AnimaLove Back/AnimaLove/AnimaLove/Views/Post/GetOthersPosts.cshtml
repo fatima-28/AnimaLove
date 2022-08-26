@@ -3,7 +3,7 @@
     Layout = null;
 }
 @{
-    ViewData["Title"] = "GetPosts";
+    ViewData["Title"] = "GetOthersPost";
 }
 @model List<Post>
 
@@ -89,9 +89,9 @@
                 </div>
             </div>
             <div class="hamburger" onclick="openNav()"><i class="fa-solid fa-bars  hamburger"></i></div>
-           
-           
-           
+
+
+
         </div>
     </header>
     <section id="myposts">
@@ -99,24 +99,20 @@
             <div class="my-posts-inner">
                 <div class="posts-items">
 
-                    <a asp-controller="Post" asp-action="AddNewPost" class="post-link">
-                        <div class="single-post-items ">
-                            <i class="fa-solid fa-plus"></i>
-                        </div>
-                    </a>
+                  
                     @foreach (var post in Model)
-                        {
-                            <a asp-controller="FullPostInfo" asp-action="Index" asp-route-id="@post.Id" class="post-link">
-                                <div class="single-post-items">
-                                    <img src="~/assets/img/@post.PostImage" alt="photo">
-                                </div>
-                            </a>
+                    {
+                        <a asp-controller="FullPostInfo" asp-action="Others" asp-route-id="@post.Id" class="post-link">
+                            <div class="single-post-items">
+                                <img src="~/assets/img/@post.PostImage" alt="photo">
+                            </div>
+                        </a>
 
-                        }
+                    }
 
                 </div>
             </div>
         </div>
     </section>
-    </body>
+</body>
 </html>
