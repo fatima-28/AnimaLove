@@ -30,7 +30,7 @@ namespace AnimaLove.Controllers
         {
             PostViewModel home = new PostViewModel
             {
-                Posts=_context.Posts.Where(p=>!p.IsDeleted).ToList()
+                Posts=_context.Posts.Where(p=>!p.IsDeleted).OrderByDescending(c=>c.Id).ToList()
             };
             return View(home);
         }
@@ -43,7 +43,7 @@ namespace AnimaLove.Controllers
                 PostsList.Add(item.Id);
 
             }
-            var posts = _context.Posts.Where(u => PostsList.Any(Id => Id == u.Id)).Where(p=>!p.IsDeleted).ToList();
+            var posts = _context.Posts.Where(u => PostsList.Any(Id => Id == u.Id)).Where(p=>!p.IsDeleted).OrderByDescending(c => c.Id).ToList();
                return View(posts);
 
 
@@ -72,7 +72,7 @@ namespace AnimaLove.Controllers
                 PostsList.Add(item.Id);
 
             }
-            var posts = _context.Posts.Where(u => PostsList.Any(Id => Id == u.Id)).Where(p => !p.IsDeleted).ToList();
+            var posts = _context.Posts.Where(u => PostsList.Any(Id => Id == u.Id)).Where(p => !p.IsDeleted).OrderByDescending(c => c.Id).ToList();
             return View(posts);
 
 
