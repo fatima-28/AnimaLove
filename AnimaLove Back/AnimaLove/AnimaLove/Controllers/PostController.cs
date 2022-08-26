@@ -79,7 +79,107 @@ namespace AnimaLove.Controllers
 
        
         }
-        public async Task< IActionResult >AddNewPost(CreatePostViewModel model, string Id)
+        public async Task<IActionResult> DeletePost(int? Id)
+        {
+            if (Id == null)
+            {
+                return BadRequest();
+            }
+            Post postDb = _context.Posts.Where(p => !p.IsDeleted).FirstOrDefault(p => p.Id == Id);
+            if (postDb == null)
+            {
+                return NotFound();
+            }
+            postDb.IsDeleted = true;
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+
+        }
+        public IActionResult EditPost(int? Id)
+        {
+            if (Id == null)
+            {
+                return BadRequest();
+            }
+            Post PostDb = _context.Posts.Where(w => !w.IsDeleted).FirstOrDefault(w => w.Id == Id);
+            if (PostDb== null)
+            {
+                return NotFound();
+            }
+            return View(PostDb);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditPost(int? Id, Post model)
+        {
+
+            if (ModelState.IsValid)
+            {
+                if (model.PostTitle == null)
+                {
+                    ModelState.AddModelError("PostTitle", "This Field is required");
+                    return View();
+                }
+                if (model.PostDescription == null)
+                {
+                    ModelState.AddModelError("PostDescription", "This Field is required");
+                    return View();
+                }
+                if (model.PostDescription.Length <= 10)
+                {
+                    ModelState.AddModelError("PostDescription", "Description must be at least 10 character");
+                    return View();
+                }
+
+                var postDatabase = await _context.Posts.FindAsync(model.Id);
+
+                postDatabase.PostTitle = model.PostTitle;
+                postDatabase.PostDescription = model.PostDescription;
+
+
+                if (model.PostPhoto != null)
+                {
+                    if (model.PostImage != null)
+                    {
+                        string filePath = Path.Combine(_env.WebRootPath, "assets", "img", model.PostImage);
+                        System.IO.File.Delete(filePath);
+                    }
+                    postDatabase.PostImage = ProcessUploadedFile(model);
+
+                }
+                _context.Update(postDatabase);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+
+            }
+            return View();
+        }
+        public string ProcessUploadedFile(Post model)
+        {
+            string uniqueFileName = null;
+
+            if (model.PostPhoto != null)
+            {
+                string uploadsFolder = Path.Combine(_env.WebRootPath, "assets", "img");
+                uniqueFileName = Guid.NewGuid().ToString() + "_" + model.PostPhoto.FileName;
+                string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    model.PostPhoto.CopyTo(fileStream);
+                }
+            }
+
+            return uniqueFileName;
+
+
+        }
+
+
+
+
+
+
+        public  IActionResult AddNewPost(CreatePostViewModel model, string Id)
         {
 
 
@@ -129,6 +229,14 @@ namespace AnimaLove.Controllers
 
 
         }
+
+
+
+
+
+
+
+
         private string UploadedFile(CreatePostViewModel model)
         {
             string uniqueFileName = null;

@@ -1,0 +1,34 @@
+﻿@using AnimaLove.Models
+@model Post
+@{
+    ViewData["Title"] = "EditPost";
+}
+
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Edit Post</h4>
+
+            <form class="forms-sample" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label asp-for="PostPhoto">Image</label>
+                    <input class="form-control" asp-for="PostPhoto">
+                    <span class="text-danger" asp-validation-for="PostPhoto"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PostTitle">Name</label>
+                    <input class="form-control" asp-for="PostTitle" placeholder="Title">
+                    <span class="text-danger" asp-validation-for="PostTitle"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PostDescription">Description</label>
+                    <input class="form-control" asp-for="PostDescription" placeholder="Description">
+                    <span class="text-danger" asp-validation-for="PostDescription"></span>
+                </div>
+
+                <button type="submit" class="btn btn-warning me-2">Edit</button>
+                <button class="btn btn-light" asp-action="Index">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>

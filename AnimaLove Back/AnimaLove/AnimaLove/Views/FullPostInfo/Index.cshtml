@@ -26,8 +26,8 @@
                             <p class="post-title">@Model.PostTitle</p>
                             <div class="post-icons">
                                 <div class="edit">
-                                    <a href="#">Edit Post</a>
-                                    <a href="#" class="text-danger">Delete Post</a>
+                                    <a asp-controller="Post" asp-action="EditPost" asp-route-id="@Model.Id">Edit Post</a>
+                                    <a asp-controller="Post" asp-action="DeletePost" asp-route-id="@Model.Id" class="text-danger">Delete Post</a>
                                 </div>
                             </div>
                         </div>
