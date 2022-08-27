@@ -1,4 +1,6 @@
-﻿
+﻿@using AnimaLove.Models
+@using AnimaLove.ViewModels
+@model MessagesViewModel
 @{
     Layout = null;
 }
@@ -56,67 +58,20 @@
                         </div>
 
 
-                        <a href="#" class="list-group-item list-group-item-action border-0">
-                            <div class="d-flex align-items-start">
-                                <img src="https://bootdey.com/img/Content/avatar/avatar3.png"
-                                     class="rounded-circle mr-1" alt="Sharon Lessman" width="40" height="40">
-                                <div class="flex-grow-1 ml-3">
-                                    <p class="contact-name">SHaron Tusker</p>
 
+                        @foreach (var user in Model.users)
+                        {
+                            <a asp-controller="Follower" asp-action="GetOthersProfile" asp-route-id="@user.Id" class="list-group-item list-group-item-action border-0">
+                                <div class="d-flex align-items-start">
+                                    <img src="~/assets/img/@user.ProfileImage"
+                                         class="rounded-circle mr-1" alt="profile image" width="40" height="40">
+                                    <div class="flex-grow-1 ml-3">
+                                        <p class="contact-name">@user.FullName</p>
+
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action border-0">
-                            <div class="d-flex align-items-start">
-                                <img src="https://bootdey.com/img/Content/avatar/avatar4.png"
-                                     class="rounded-circle mr-1" alt="Christina Mason" width="40" height="40">
-                                <div class="flex-grow-1 ml-3">
-                                    <p class="contact-name"> VCrista Tusker</p>
-
-                                </div>
-                            </div>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action border-0">
-                            <div class="d-flex align-items-start">
-                                <img src="https://bootdey.com/img/Content/avatar/avatar5.png"
-                                     class="rounded-circle mr-1" alt="Fiona Green" width="40" height="40">
-                                <div class="flex-grow-1 ml-3">
-                                    <p class="contact-name"> Fionasa Tusker</p>
-
-                                </div>
-                            </div>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action border-0">
-                            <div class="d-flex align-items-start">
-                                <img src="https://bootdey.com/img/Content/avatar/avatar2.png"
-                                     class="rounded-circle mr-1" alt="Doris Wilder" width="40" height="40">
-                                <div class="flex-grow-1 ml-3">
-                                    <p class="contact-name"> Lalina Tusker</p>
-
-                                </div>
-                            </div>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action border-0">
-                            <div class="d-flex align-items-start">
-                                <img src="https://bootdey.com/img/Content/avatar/avatar4.png"
-                                     class="rounded-circle mr-1" alt="Haley Kennedy" width="40" height="40">
-                                <div class="flex-grow-1 ml-3">
-                                    <p class="contact-name"> Lalina Tusker</p>
-
-                                </div>
-                            </div>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action border-0">
-                            <div class="d-flex align-items-start">
-                                <img src="https://bootdey.com/img/Content/avatar/avatar3.png"
-                                     class="rounded-circle mr-1" alt="Jennifer Chang" width="40" height="40">
-                                <div class="flex-grow-1 ml-3">
-                                    <p class="contact-name"> Jennifer Tusker</p>
-
-                                </div>
-                            </div>
-                        </a>
-
+                            </a>
+                        }
                         <hr class="d-block d-lg-none mt-1 mb-0">
                     </div>
                     <div class="col-12 col-lg-7 col-xl-9">
@@ -161,7 +116,7 @@
                                 </div>
 
                                 <div class="chat-message-right mb-4">
-                                 
+
                                     <div>
                                         <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="rounded-circle mr-1" alt="Chris Wood" width="40" height="40">
                                         <div class="text-muted small text-nowrap mt-2">2:35 am</div>
@@ -172,9 +127,9 @@
                                     </div>
                                 </div>
 
-                              
 
-                              
+
+
 
                             </div>
                         </div>
@@ -192,8 +147,8 @@
             </div>
         </div>
     </main>
- @*scripts started*@ 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    @*scripts started*@
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
             integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
             integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
