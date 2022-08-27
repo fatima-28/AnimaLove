@@ -1,4 +1,6 @@
 ﻿@model AnimaLove.Models.AppUser
+@using AnimaLove.DAL
+@inject AppDbContext _context
 @{
     Layout = null;
 }
@@ -58,8 +60,44 @@
                                 <a asp-controller="Following" asp-action="GetFollowings" asp-route-id="@Model.Id">Followings</a>
                             </div>
                             <div class="follow">
-                                <a href="">Follow</a>
+                                @{
+
+                                    bool IsExist = _context.FollowingUser.Where(f => !f.IsDeleted).Any(c => c.FollowingId == Model.Id);
+                                    if (IsExist)
+                                    {
+                                        <div class="follow-main">
+                                            <a style="color:white;" asp-controller="Following" asp-action="UnfollowAction" asp-route-id="@Model.Id"> Unfollow</a>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="follow-main">
+                                            <a style="color:white;" asp-controller="Follower" asp-action="FollowAction" asp-route-id="@Model.Id"> Follow</a>
+                                        </div>
+                                    }
+                                }
                             </div>
+
+
+
+
+                            @* @{
+
+            bool IsExist = _context.FollowingUser.Where(f=>!f.IsDeleted).Any(c => c.FollowingId == user.Id);
+            if (IsExist)
+            {
+                <div class="follow-main">
+                    <a style="color:white;" asp-controller="Following" asp-action="UnfollowAction" asp-route-id="@user.Id"> Unfollow</a>
+                </div>
+            }
+            else
+            {
+                <div class="follow-main">
+                    <a style="color:white;" asp-controller="Follower" asp-action="FollowAction" asp-route-id="@user.Id"> Follow</a>
+                </div>
+            }
+        }*@
+
 
 
                         </div>

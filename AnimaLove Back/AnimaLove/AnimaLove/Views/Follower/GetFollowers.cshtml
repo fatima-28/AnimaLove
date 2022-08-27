@@ -1,5 +1,8 @@
 ﻿@using AnimaLove.Models
+@using AnimaLove.DAL
 @model List<AppUser>
+@*@inject AppUser _user*@
+@inject AppDbContext _context; 
 @{
     ViewData["Title"] = "Index";
 }
@@ -25,9 +28,25 @@
                         
                             <div class="follow-button">
 
-                                <div class="follow-main">
-                                    <a style="color:white;" asp-controller="Follower" asp-action="FollowAction" asp-route-id="@user.Id"> Follow</a>
-                                </div>
+
+
+                                @{
+
+                                    bool IsExist = _context.FollowingUser.Where(f=>!f.IsDeleted).Any(c => c.FollowingId == user.Id);
+                                    if (IsExist)
+                                    {
+                                        <div class="follow-main">
+                                            <a style="color:white;" asp-controller="Following" asp-action="UnfollowAction" asp-route-id="@user.Id"> Unfollow</a>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="follow-main">
+                                            <a style="color:white;" asp-controller="Follower" asp-action="FollowAction" asp-route-id="@user.Id"> Follow</a>
+                                        </div>
+                                    }
+                                }
+
                             </div>
                         </div>
 

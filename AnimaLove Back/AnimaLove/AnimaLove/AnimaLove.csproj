@@ -15,6 +15,8 @@
     <Compile Remove="Migrations\20220816172550_FollowerDbSet.Designer.cs" />
     <Compile Remove="Migrations\20220816172757_FollowerUserDbSet.cs" />
     <Compile Remove="Migrations\20220816172757_FollowerUserDbSet.Designer.cs" />
+    <Compile Remove="Migrations\20220827171033_IsDeletedFollower.cs" />
+    <Compile Remove="Migrations\20220827171033_IsDeletedFollower.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

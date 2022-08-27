@@ -12,5 +12,6 @@ namespace AnimaLove.Models
         public string AppUserId { get; set; }
         public AppUser AppUser { get; set; }
         public Follower Follower { get; set; }
+        public bool IsDeleted { get; set; }
     }
 }
