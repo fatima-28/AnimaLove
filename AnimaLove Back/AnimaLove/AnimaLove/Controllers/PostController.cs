@@ -163,64 +163,53 @@ namespace AnimaLove.Controllers
 
 
 
-        public  IActionResult AddNewPost(CreatePostViewModel model, string Id)
+        public IActionResult AddNewPost()
         {
-
-
             return View();
-           // var MyuserName = _userManager.FindByNameAsync(HttpContext.User.Identity.Name);
-           //var UserId= MyuserName.Result.Id;
-           // if (ModelState.IsValid)
-           // {
-           //     string uniqueFileName = UploadedFile(model);
-           //     if (model.PostTitle == null)
-           //     {
-           //         ModelState.AddModelError("PostTitle", "Name is required");
-           //         return View();
-           //     }
-           //     if (model.PostDescription == null)
-           //     {
-           //         ModelState.AddModelError("PostDescription", "Description must be at least 10 character");
-           //         return View();
-           //     }
-           //     if (model.PostDescription.Length <= 10)
-           //     {
-           //         ModelState.AddModelError("PostDescription", "Description must be at least 10 character");
-           //         return View();
-           //     }
-               
-
-           //     Post post = new Post
-           //     {
-           //         PostTitle = model.PostTitle,
-           //         PostDescription = model.PostDescription,
-           //         PostImage = uniqueFileName,
-           //         AppUserId=UserId,
-           //         userName=model.AppUser.UserName
-
-
-
-           //     };
-           //     MyuserName.Result.Posts.Add(post);
-
-
-           //     _context.Posts.Add(post);
-           //     await _context.SaveChangesAsync();
-           //     return RedirectToAction(nameof(Index));
-           // }
-           // return View();
-           // //return View();
-
-
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> AddNewPost(CreatePostViewModel model)
+        {
+            AppUser user = _userManager.FindByNameAsync(User.Identity.Name).Result;
+            var userId = user.Id;
+            if (ModelState.IsValid)
+            {
+                string uniqueFileName = UploadedFile(model);
+                if (model.PostTitle == null)
+                {
+                    ModelState.AddModelError("PostTitle", "Name is required");
+                    return View();
+                }
+                if (model.PostDescription == null)
+                {
+                    ModelState.AddModelError("PostDescription", "Description must be at least 10 character");
+                    return View();
+                }
+                if (model.PostDescription.Length <= 10)
+                {
+                    ModelState.AddModelError("PostDescription", "Description must be at least 10 character");
+                    return View();
+                }
 
 
 
+                Post post = new Post
+                {
+                    PostTitle = model.PostTitle,
+                    PostDescription = model.PostDescription,
+                    PostImage = uniqueFileName,
+                    AppUserId = userId,
+                    userName=User.Identity.Name
 
 
-
-
-
+                };
+                _context.Add(post);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View();
+        }
         private string UploadedFile(CreatePostViewModel model)
         {
             string uniqueFileName = null;
@@ -237,5 +226,15 @@ namespace AnimaLove.Controllers
             }
             return uniqueFileName;
         }
+
+
+
+
+
+
+
+
+
+
     }
 }
