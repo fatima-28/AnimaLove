@@ -1,0 +1,36 @@
+﻿@using AnimaLove.ViewModels.PetViewModels
+@model CreatePetViewModel
+@{
+    ViewData["Title"] = "CreateAnnouncement";
+}
+
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Create New Announcement</h4>
+            <span class="text-danger">After a new announcement is created, it can only be edited and deleted by the admin. Are you sure you want to create?</span>
+
+            <form class="forms-sample" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label asp-for="Photo">Image</label>
+                    <input class="form-control" asp-for="Photo">
+                    <span class="text-danger" asp-validation-for="Photo"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Name">Name</label>
+                    <input class="form-control" asp-for="Name" placeholder="Name">
+                    <span class="text-danger" asp-validation-for="Name"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description">Description</label>
+                    <input class="form-control" asp-for="Description" placeholder="Description">
+                    <span class="text-danger" asp-validation-for="Description"></span>
+                </div>
+
+
+                <button type="submit" class="btn btn-primary me-2">Add</button>
+                <button class="btn btn-light" asp-controller="Home" asp-action="Index">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>

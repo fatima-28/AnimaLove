@@ -46,22 +46,6 @@ namespace AnimaLove.Controllers
             var posts = _context.Posts.Where(u => PostsList.Any(Id => Id == u.Id)).Where(p=>!p.IsDeleted).OrderByDescending(c => c.Id).ToList();
                return View(posts);
 
-
-
-            //public IActionResult GetFollowers(string Id)
-            //{
-            //    List<string> FollowerList = new List<string>();
-
-            //    var followerUser = _context.FollowerUser.Where(f => f.AppUserId == Id).ToList();
-            //    foreach (var item in followerUser)
-            //    {
-            //        FollowerList.Add(item.FollowerId);
-
-            //    }
-            //    var followers = _context.Users.Where(u => FollowerList.Any(id => id == u.Id)).ToList();
-            //    return View(followers);
-
-            //}
         }
         public IActionResult GetOthersPosts(string Id)
         {

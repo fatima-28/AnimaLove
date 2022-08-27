@@ -4,6 +4,7 @@ using AnimaLove.Models;
 using AnimaLove.ViewModels.PetViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -20,8 +21,10 @@ namespace AnimaLove.Areas.AnimaLoveAdmin.Controllers
         private IWebHostEnvironment _env { get; }
         private AppDbContext _context { get; }
         public IEnumerable<Pet> pets;
-        public AdoptionController(AppDbContext context, IWebHostEnvironment env)
+        private readonly UserManager<AppUser> _userManager;
+        public AdoptionController(AppDbContext context, IWebHostEnvironment env, UserManager<AppUser> userManager)
         {
+            _userManager = userManager;
             _context = context;
             pets = _context.Pets.Where(p => !p.IsAdopted).ToList();
 
@@ -55,6 +58,8 @@ namespace AnimaLove.Areas.AnimaLoveAdmin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(CreatePetViewModel model)
         {
+            AppUser user = _userManager.FindByNameAsync(User.Identity.Name).Result;
+            var userId = user.Id;
             if (ModelState.IsValid)
             {
                 string uniqueFileName = UploadedFile(model);
@@ -81,8 +86,9 @@ namespace AnimaLove.Areas.AnimaLoveAdmin.Controllers
                     Name = model.Name,
                     Description = model.Description,
                     Image = uniqueFileName,
-                    
-                    
+                    AppUserId= userId
+
+
                 };
                 _context.Add(pet);
                 await _context.SaveChangesAsync();

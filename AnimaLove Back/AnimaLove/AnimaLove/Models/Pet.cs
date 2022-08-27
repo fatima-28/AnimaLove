@@ -17,6 +17,7 @@ namespace AnimaLove.Models
         public IFormFile Photo { get; set; }
         public string Description { get; set; }
         public bool IsAdopted { get; set; }
-       
+        public string AppUserId { get; set; }
+        public AppUser AppUser { get; set; }
     }
 }
