@@ -61,16 +61,20 @@
 
                         @foreach (var user in Model.users)
                         {
-                            <a asp-controller="Follower" asp-action="GetOthersProfile" asp-route-id="@user.Id" class="list-group-item list-group-item-action border-0">
-                                <div class="d-flex align-items-start">
-                                    <img src="~/assets/img/@user.ProfileImage"
-                                         class="rounded-circle mr-1" alt="profile image" width="40" height="40">
-                                    <div class="flex-grow-1 ml-3">
-                                        <p class="contact-name">@user.FullName</p>
+                            if (user.UserName != User.Identity.Name)
+                            {
+                                <a asp-controller="Follower" asp-action="GetOthersProfile" asp-route-id="@user.Id" class="list-group-item list-group-item-action border-0">
+                                    <div class="d-flex align-items-start">
+                                        <img src="~/assets/img/@user.ProfileImage"
+                                             class="rounded-circle mr-1" alt="profile image" width="40" height="40">
+                                        <div class="flex-grow-1 ml-3">
+                                            <p class="contact-name">@user.FullName</p>
 
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
+                                </a>
+                            }
+
                         }
                         <hr class="d-block d-lg-none mt-1 mb-0">
                     </div>
@@ -82,7 +86,7 @@
                                          class="rounded-circle mr-1" alt="Sharon Lessman" width="40" height="40">
                                 </div>
                                 <div class="flex-grow-1 pl-3">
-                                    <strong>Aziz Rahimov</strong>
+                                    <strong>Ferrux Aliyev</strong>
 
                                 </div>
 
@@ -95,7 +99,7 @@
                                 <div class="chat-message-right pb-4">
                                     <div>
                                         <img src="~/assets/img/05eb2ecb-afbd-48b7-8d29-0ea0ccbc1833_image-girllll.jpg" class="rounded-circle mr-1" alt="Chris Wood" width="40" height="40">
-                                        <div class="text-muted small text-nowrap mt-2">2:33 am</div>
+                                        <div class="text-muted small text-nowrap mt-2">2:33 </div>
                                     </div>
                                     <div class="flex-shrink-1 bg-light rounded py-2 px-3 mr-3">
                                         <div class="font-weight-bold mb-1">You</div>
@@ -107,20 +111,20 @@
                                     <div>
                                         <img src="~/assets/img/12ef7819-35d2-40b2-b092-bcd67e60eca1_aziz.jpg" class="rounded-circle mr-1" alt="Chris Wood" width="40" height="40">
 
-                                        <div class="text-muted small text-nowrap mt-2">2:34 am</div>
+                                        <div class="text-muted small text-nowrap mt-2">2:34 </div>
                                     </div>
                                     <div class="flex-shrink-1 bg-light rounded py-2 px-3 ml-3">
-                                        <div class="font-weight-bold mb-1">Aziz Rahimov</div>
+                                        <div class="font-weight-bold mb-1">Ferrux Aliyev</div>
                                        Hello,Sure  </div>
                                 </div>
                                 <div class="chat-message-left pb-4">
                                     <div>
                                         <img src="~/assets/img/12ef7819-35d2-40b2-b092-bcd67e60eca1_aziz.jpg" class="rounded-circle mr-1" alt="Chris Wood" width="40" height="40">
 
-                                        <div class="text-muted small text-nowrap mt-2">2:34 am</div>
+                                        <div class="text-muted small text-nowrap mt-2">2:34 </div>
                                     </div>
                                     <div class="flex-shrink-1 bg-light rounded py-2 px-3 ml-3">
-                                        <div class="font-weight-bold mb-1">Aziz Rahimov</div>
+                                        <div class="font-weight-bold mb-1">Ferrux Aliyev</div>
                                         How you want to help? </div>
                                 </div>
 
@@ -128,11 +132,11 @@
 
                                     <div>
                                         <img src="~/assets/img/05eb2ecb-afbd-48b7-8d29-0ea0ccbc1833_image-girllll.jpg" class="rounded-circle mr-1" alt="Chris Wood" width="40" height="40">
-                                        <div class="text-muted small text-nowrap mt-2">2:35 am</div>
+                                        <div class="text-muted small text-nowrap mt-2">2:35 </div>
                                     </div>
                                     <div class="flex-shrink-1 bg-light rounded py-2 px-3 mr-3">
                                         <div class="font-weight-bold mb-1">You</div>
-                                        You posted about scar on yor cat's paw right?
+                                        <p>You posted about scar on yor cat's paw right?</p>
                                     </div>
                                 </div>
 
@@ -147,7 +151,7 @@
                             <div class="input-group">
                                 @*<input type="text" class="form-control" placeholder="User" id="userInput">*@
                                 <input type="text" class="form-control" placeholder="Type your message" id="messageInput">
-                                <button class="btn send-message" id="sendButton">Send</button>
+                                <button class="btn send-message" id="sendButton" >Send</button>
                             </div>
                         </div>
 
