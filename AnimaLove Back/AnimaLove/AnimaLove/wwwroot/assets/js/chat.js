@@ -79,5 +79,6 @@ $("#sendButton").click(function () {
     div.appendChild(SecondDiv);
 
     messagelist.appendChild(div);
+  /*  message.innerText = "";*/
 });
 
