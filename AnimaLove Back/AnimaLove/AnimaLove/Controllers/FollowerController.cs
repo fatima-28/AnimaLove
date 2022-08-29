@@ -63,12 +63,14 @@ namespace AnimaLove.Controllers
            
             var user = _context.Users.Where(w => w.Id == Id).FirstOrDefault(u => u.Id == Id);
             var userId = _userManager.GetUserId(HttpContext.User);
+           
             FollowingUser newFollowingUser = new FollowingUser
             {
                 FollowingId=Id,
                 AppUserId= userId   
 
             };
+           
           _context.FollowingUser.Add(newFollowingUser);
            await _context.SaveChangesAsync();
             return RedirectToAction("Index","Profile");
